@@ -1,0 +1,97 @@
+/* Overall container for the section */
+.carousel-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.carousel-section-mobile {
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+/* Left section for content */
+.content-section {
+    width: 40%;
+    background-color: #f4f4f4;
+    padding-left: 40px;
+}
+
+.content-section-mobile {
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+
+/* Card container */
+.card-container {
+    position: absolute;
+    width: 40%;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.card-container-mobile {
+    width: 100%;
+    // transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for testimonial card */
+.testimonial-card {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.client-name {
+    font-style: italic;
+    color: #555;
+}
+
+/* Card Header: Logo on left, arrows on right */
+.card-header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.carousel-arrows {
+    position: relative;
+    width: auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+/* Right section for full image */
+.image-section {
+    position: relative;
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,17 @@
+#bottom-sheet {
+    .sheet {
+      bottom: 0px;
+      height: 100%;
+      background-color: gray;
+      width: 400px;
+      cursor: pointer;
+      .header {
+        height: 50px;
+      }
+      .sheet-content {
+        width: 100%;
+        background-color: #ffffff;
+      }
+    }
+  }
+  

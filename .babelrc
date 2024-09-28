@@ -1,0 +1,17 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-flow",
+        "minify" // Add this line for minify preset
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "babel-plugin-transform-undefined-to-void"
+    ],
+    "env": {
+        "production": {
+            // You don't need "presets": ["minify"] here
+        }
+    }
+}
