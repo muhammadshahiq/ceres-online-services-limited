@@ -22,12 +22,12 @@ const Footer = (props) => {
                             <img
                                 height='30px'
                                 width='100%'
-                                src={`${process.env.PUBLIC_URL}/assets/images/logo-revepix.svg`}
+                                src={`${process.env.PUBLIC_URL}/assets/images/logo-Ceres Online Services Limited.svg`}
                             ></img>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <Typography className='pt-4 pb-4 text-white cursor-pointer' variant={clsx(!(mobileWidth || tabletWidth) && 'body2', tabletWidth && 'body2', mobileWidth && 'caption')}>
-                                Copyright © Revepix LLC, 2024
+                                Copyright © Ceres Online Services Limited LLC, 2024
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={4}>

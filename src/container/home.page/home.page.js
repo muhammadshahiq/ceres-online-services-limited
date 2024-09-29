@@ -95,8 +95,8 @@ const HomePage = () => {
             author: 'Brendan Hsu',
             date: '7.14.2021',
             image: `${process.env.PUBLIC_URL}/assets/images/rp-1.png`,
-            title: 'Revepix Ranked As Top 20 Digital Marketing Agency in California',
-            description: 'Revepix has been recognized as a Top 20 Digital Marketing Agency in San Francisco in 2021 by DesignRush.'
+            title: 'Ceres Online Services Limited Ranked As Top 20 Digital Marketing Agency in California',
+            description: 'Ceres Online Services Limited has been recognized as a Top 20 Digital Marketing Agency in San Francisco in 2021 by DesignRush.'
         },
         {
             tag: '',

@@ -16,8 +16,8 @@ export default function ExpandableView(props) {
     };
     const faqs = [
         {
-            question: `Why Revepix?`,
-            answer: `Revepix is your edge to streamlining your business and standing out in a crowded marketplace. We provide you with an end-to-end solution to help put your listings on the market for top dollar, increase your exposure, and ultimately build your brand. We have an in-house team that delivers for you photos, video, drone, 3D, websites, print, and leads. All delivered as fast as next-day. You can always call or text our team at any time and expect a prompt answer. We’re industry experts and solution-oriented. And because we have an in-house team, we are able to provide consistent quality at a wholesale rate - and more so unmatched value and innovation as your dedicated marketing team.`,
+            question: `Why Ceres Online Services Limited?`,
+            answer: `Ceres Online Services Limited is your edge to streamlining your business and standing out in a crowded marketplace. We provide you with an end-to-end solution to help put your listings on the market for top dollar, increase your exposure, and ultimately build your brand. We have an in-house team that delivers for you photos, video, drone, 3D, websites, print, and leads. All delivered as fast as next-day. You can always call or text our team at any time and expect a prompt answer. We’re industry experts and solution-oriented. And because we have an in-house team, we are able to provide consistent quality at a wholesale rate - and more so unmatched value and innovation as your dedicated marketing team.`,
         },
         {
             question: `What services do you offer?`,
@@ -118,8 +118,8 @@ export default function ExpandableView(props) {
             answer: `We’re here to support you on everything real estate marketing. You can talk to a human being at any time through a phone call, email, and even chat!`,
         },
         {
-            question: `What makes Revepix unique?`,
-            answer: `Revepix is a full end-to-end solution to maximize your listings on the market, get you more exposure, and build your real estate brand. You can expect consistent quality and quick turnaround on photos, video, drone, 3D, websites, print/design, and more. Our dedicated team of project managers, creatives, and editors, becomes an extension of your own team - your competitive advantage. We innovate on your behalf, so marketing is the last thing holding you back from winning your next listing.`,
+            question: `What makes Ceres Online Services Limited unique?`,
+            answer: `Ceres Online Services Limited is a full end-to-end solution to maximize your listings on the market, get you more exposure, and build your real estate brand. You can expect consistent quality and quick turnaround on photos, video, drone, 3D, websites, print/design, and more. Our dedicated team of project managers, creatives, and editors, becomes an extension of your own team - your competitive advantage. We innovate on your behalf, so marketing is the last thing holding you back from winning your next listing.`,
         },
     ]
 

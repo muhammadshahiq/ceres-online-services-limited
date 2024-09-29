@@ -13,7 +13,7 @@ const testimonials = [
         name: "Alex Yam",
         // company: "COMPASS",
         review:
-            "Revepix has definitely changed the game in real estate marketing. They are truly the one-stop shop. Their pricing is competitive and the quality of their work is second to none. They have a fairly large team and everyone are great at their roles with communication throughout.",
+            "Ceres Online Services Limited has definitely changed the game in real estate marketing. They are truly the one-stop shop. Their pricing is competitive and the quality of their work is second to none. They have a fairly large team and everyone are great at their roles with communication throughout.",
         image: 'https://cdn.prod.website-files.com/626b03ca7629cd91b5c563ce/63512cce749c2e4126c132c7_AC%20Portraits%202-min.jpg', // Placeholder, replace with actual image URL
         logo: `${process.env.PUBLIC_URL}/assets/images/pt-1.png`, // Placeholder logo URL, replace with actual
     },
@@ -21,7 +21,7 @@ const testimonials = [
         name: "Sarah Collins",
         // company: "XYZ Real Estate",
         review:
-            "I am so impressed with Revepix. What I like best about Revepix is that it looks like a very professional and aesthetically pleasing HGTV movie. My sellers and buyers were raving about the video. The service and staff interaction was excellent and the turn around time for my videos and pictures was quick. I am so grateful for having found a great partner in Revepix.  Looking forward to lots more listings together specially now where virtual tours are essential and the way of the future.",
+            "I am so impressed with Ceres Online Services Limited. What I like best about Ceres Online Services Limited is that it looks like a very professional and aesthetically pleasing HGTV movie. My sellers and buyers were raving about the video. The service and staff interaction was excellent and the turn around time for my videos and pictures was quick. I am so grateful for having found a great partner in Ceres Online Services Limited.  Looking forward to lots more listings together specially now where virtual tours are essential and the way of the future.",
         image: 'https://cdn.prod.website-files.com/626b03ca7629cd91b5c563ce/630eea4311317d226203a8f5_AC%20Portraits%2056.jpg', // Placeholder, replace with actual image URL
         logo: `${process.env.PUBLIC_URL}/assets/images/pt-2.png`, // Placeholder logo URL, replace with actual
     },

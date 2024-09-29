@@ -40,7 +40,7 @@ const VideoSection = () => {
                     </Typography>
                     <Typography className={clsx(!(mobileWidth || tabletWidth) && classes.textStyle, (mobileWidth || tabletWidth) && classes.textStyleMobile, 'pt-1 pb-1 font-weight-bold')}
                         variant={clsx(!(mobileWidth || tabletWidth) && 'caption', tabletWidth && 'caption', mobileWidth && 'caption')}>
-                        Revepix - Showreel
+                        Ceres Online Services Limited - Showreel
                     </Typography>
                 </div>
             </Container>
