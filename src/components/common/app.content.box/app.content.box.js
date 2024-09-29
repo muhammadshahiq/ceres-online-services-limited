@@ -12,16 +12,16 @@ const AppContentBox = (props) => {
     return (
         <div>
             {title ?
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h4', mobileWidth && 'h6')} className={clsx(classes.textStyle, 'text-transform-none text-left')}>
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h2', mobileWidth && 'h6')} className={clsx(classes.textStyle, 'text-transform-none text-left')}>
                     {title}
                 </Typography> : null
             }
             {label ?
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h5', (mobileWidth || tabletWidth) && 'body1')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-2 pb-2')}>
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h5', tabletWidth && 'h4', mobileWidth && 'body1')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-2 pb-2')}>
                     {label}
                 </Typography> : null}
             {description ?
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', (mobileWidth || tabletWidth) && 'body3')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-2 pb-2')}>
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-2 pb-2')}>
                     {description}
                 </Typography> : null
             }

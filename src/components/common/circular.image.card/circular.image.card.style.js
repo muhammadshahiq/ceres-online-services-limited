@@ -4,6 +4,8 @@ export const useStyle = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
         borderRadius: '8px',
         cursor: 'pointer',
+        border: `1.5px solid ${theme.palette.primary.main}`,
+        // border: '0px'
         // "&:hover": {
         //     border: `1px solid #fff`
         // }
@@ -11,17 +13,25 @@ export const useStyle = makeStyles((theme) => ({
     selectedCard: {
         backgroundColor: theme.palette.background.paper,
         borderRadius: '8px',
+        border: `1.5px solid ${theme.palette.primary.main}`,
         // "&:hover": {
         //     border: `1px solid ${theme.palette.secondary.main}`
         // }
     },
     cardContent: {
-        backgroundColor: theme.palette.secondary.light,
-        minHeight: '260px'
+        backgroundColor: theme.palette.background.paper,
+        // border: `1.5px solid ${theme.palette.primary.main}`,
+        minHeight: '100px',
+        boxShadow: 'none',
+        "&:hover": {
+            backgroundColor: theme.palette.ternary.main,
+        }
     },
     selectedCardContent: {
-        backgroundColor: theme.palette.secondary.main,
-        minHeight: '260px'
+        backgroundColor: theme.palette.ternary.main,
+        // border: `1.5px solid ${theme.palette.primary.main}`,
+        minHeight: '100px',
+        boxShadow: 'none'
     },
     cardMedia: {
         // objectFit: 'cover',
@@ -68,34 +78,11 @@ export const useStyle = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    btn: {
-        textTransform: 'none',
-        fontStyle: 'normal',
+    linkStyle: {
         fontWeight: 500,
-        fontSize: 14,
-        lineHeight: '20px',
-        borderRadius: '50px',
-        color: theme.palette.secondary.main,
-        border: `1px solid ${theme.palette.secondary.main}`,
-        '&:hover': {
-            background: theme.palette.secondary.main,
-            color: theme.palette.background.paper,
-            border: `1px solid ${theme.palette.background.paper}`
-        }
-    },
-    selectedBtn: {
-        textTransform: 'none',
-        fontStyle: 'normal',
-        fontWeight: 500,
-        fontSize: 14,
-        lineHeight: '20px',
-        borderRadius: '50px',
-        background: theme.palette.secondary.main,
-        color: theme.palette.background.paper,
-        border: `1px solid ${theme.palette.background.paper}`,
-        '&:hover': {
-            color: theme.palette.background.paper,
-            border: `1px solid ${theme.palette.background.paper}`,
+        textDecoration: 'underline',
+        "&:hover": {
+            fontWeight: 600
         }
     }
 }));

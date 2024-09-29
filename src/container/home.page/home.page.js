@@ -5,7 +5,7 @@ import AppNavbar from '../../components/common/app.navbar/app.navbar';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Button } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import clsx from 'clsx';
 import { useStyle } from './home.page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
@@ -15,6 +15,8 @@ import VideoContentSection from '../../components/common/video.content.section/v
 import AppButton from '../../components/common/app.button/app.button';
 import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
+import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
+import ServicesPanel from '../../components/common/services-panel/services-panel';
 
 const HomePage = () => {
     const tabletWidth = IsTabletWidth()
@@ -135,16 +137,8 @@ const HomePage = () => {
                 footer={<AppButton buttonText="Get in Touch" />}
 
             />
-            <AppBannerPanel
-                maxWidth="md"
-                classNames="pl-0 pr-0"
-                leftSideContent={<AppContentBox
-                    title="Providing Medical writing services"
-                    label="provide regulatory writing for you to gain marketing authorisation"
-                    description="Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals."
-                />}
-                 
-            />
+
+            <ServicesPanel />
             {/* <CircularImageCardPanel
                 title='PROFESSIONAL PACKAGES'
                 buttontext='Explore Pricing'

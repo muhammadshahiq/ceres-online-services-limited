@@ -13,7 +13,7 @@ export const useStyle = makeStyles((theme) => ({
     },
     responsiveHeader: {
         // background: theme.palette.gradientColor3.main,
-        height: '600px',
+        height: '520px',
         borderRadius: '0px',
     },
     textStyle: {

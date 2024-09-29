@@ -2,6 +2,7 @@
 // export const primaryColor = "#622F8C";#380E7F
 export const primaryColor = "#161A1D";
 export const secondaryColor = "#f1f1f1";
+export const ternaryColor = "#DCF2C6";
 
 //THEME_COLOR_CHANGES #82156f
 export const materialThemeBase = {
@@ -39,7 +40,7 @@ export const materialThemeBase = {
     },
     h6: {
       fontFamily: 'Outfit',
-      fontWeight: 500,
+      fontWeight: 400,
       fontSize: 24,
       lineHeight: '25.6px'
     },
@@ -81,14 +82,14 @@ export const materialThemeBase = {
       fontStyle: 'normal',
     },
     body1: {
-      fontFamily: 'Outfit',
+      fontFamily: 'Lora',
       fontWeight: 400,
       fontSize: 20,
       lineHeight: '24.2px'
     },
     body2: {
       fontFamily: 'Outfit',
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: 16,
       lineHeight: '25.6px'
     },
@@ -121,8 +122,11 @@ export const materialThemeBase = {
     },
     secondary: {
       main: secondaryColor,
-      dark:"#197cde",
-      light:"#f4f9fd"
+      dark: "#197cde",
+      light: "#f4f9fd"
+    },
+    ternary: {
+      main: ternaryColor
     }
   }
   // shadows: Array(25).fill("none")
