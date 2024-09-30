@@ -21,7 +21,7 @@ export const useStyle = makeStyles((theme) => ({
     cardContent: {
         backgroundColor: theme.palette.background.paper,
         // border: `1.5px solid ${theme.palette.primary.main}`,
-        minHeight: '100px',
+        minHeight: '150px',
         boxShadow: 'none',
         "&:hover": {
             backgroundColor: theme.palette.ternary.main,
@@ -30,7 +30,7 @@ export const useStyle = makeStyles((theme) => ({
     selectedCardContent: {
         backgroundColor: theme.palette.ternary.main,
         // border: `1.5px solid ${theme.palette.primary.main}`,
-        minHeight: '100px',
+        minHeight: '150px',
         boxShadow: 'none'
     },
     cardMedia: {

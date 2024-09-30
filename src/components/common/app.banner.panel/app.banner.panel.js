@@ -4,14 +4,14 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { Container, Grid } from '@mui/material';
 
 const AppBannerPanel = (props) => {
-    const { maxWidth, leftSideContent, rightSideContent,classNames } = props
+    const { maxWidth, leftSideContent, rightSideContent, classNames } = props
     // const classes = useStyle()
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     return (
         <div>
             <Container maxWidth={maxWidth ? maxWidth : 'lg'} className={clsx(classNames, 'pt-5 pb-5')}>
-                <Grid container columnSpacing={2} className='d-flex justify-content-center align-items-start pt-3 pb-3'>
+                <Grid container rowSpacing={1} columnSpacing={3} className={clsx(mobileWidth && 'pl-3 pr-3', 'd-flex justify-content-center align-items-start pt-3 pb-3')}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                         {leftSideContent}
                     </Grid>

@@ -43,10 +43,10 @@ const CircularImageCard = (props) => {
                     </Stack> : null
                 }
                 <div className='w-100 d-flex align-items-start pt-2'>
-                    {titleIconSrc ? <img src={titleIconSrc} alt='id-icon' width='24px' height='24px' /> : null}
+                    {titleIconSrc ? <img src={titleIconSrc} alt='id-icon' width='28px' height='28px' /> : null}
                     {title ?
                         <Typography gutterBottom variant={clsx(!(mobileWidth || tabletWidth) && "h6", (tabletWidth || mobileWidth) && 'body2')} component="div"
-                            className={clsx(classes.textStyle, 'font-weight-bold pl-2')}>
+                            className={clsx(titleIconSrc && 'pl-2', classes.textStyle, 'font-weight-bold')}>
                             {title}
                         </Typography> : null
                     }

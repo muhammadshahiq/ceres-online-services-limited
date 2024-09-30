@@ -4,7 +4,7 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { useStyle } from './app.content.box.style';
 import { Typography } from '@mui/material';
 
-const AppContentBox = (props) => {
+const   AppContentBox = (props) => {
     const { title, description, label, } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
