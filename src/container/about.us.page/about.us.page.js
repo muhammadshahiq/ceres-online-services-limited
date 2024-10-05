@@ -1,17 +1,12 @@
-import React, { lazy } from 'react'
-import './home.page.scss';
+import React from 'react'
+import './about.us.page.scss';
 import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
-import AppNavbar from '../../components/common/app.navbar/app.navbar';
-import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import clsx from 'clsx';
-import { useStyle } from './home.page.style';
+import { useStyle } from './about.us.page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
-import FaqsAndContactSection from '../../components/common/faqs.and.contact.section/faqs.and.contact.section';
-import Partners from '../../components/common/partners/partners';
-import VideoContentSection from '../../components/common/video.content.section/video.content.section';
 import AppButton from '../../components/common/app.button/app.button';
 import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
@@ -19,7 +14,7 @@ import CircularImageCard from '../../components/common/circular.image.card/circu
 import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
 
-const HomePage = () => {
+const AboutUs = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
@@ -220,23 +215,22 @@ const HomePage = () => {
         }
     ]
     return (
-        <div>
+        <div id='About-us'>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
-                    image={`${process.env.PUBLIC_URL}/assets/images/men-banner-1.svg`}
-                    title='Bring your medical communication'
-                    label='projects to life on a global scale.'
-                    description="We provide precise medical writing and regulatory documentation, delivered on time, with clear messaging, and within budget."
-                    buttonText='What we offers'
-                    tickerImages={tickerImages}
+                    image={`${process.env.PUBLIC_URL}/assets/images/about-us-banner.svg`}
+                    title='Deep Dive About Ceres Online'
+                    label='An expert team of medical writers '
+                    description="We are a passionate team of medical writers committed to delivering accurate, engaging, and accessible healthcare information, backed by our expertise in scientific research and medical communications."
+                    buttonText='Get Connect With Us'
                 />
             </div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
-                    buttonText="Lets Connect"
-                    title='Start’s from experiments till goto Market Strategy'
-                    description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
-                    footer={<AppButton buttonText="Get in Touch" />}
+                    buttonText="Our Mission"
+                    title='From molecule to market, we write the science that transforms lives.'
+                    description='We support our industry partners in driving therapeutic innovation by providing world-class medical writing and regulatory documentation, from molecule to market.'
+                    footer={<AppButton buttonText="Get Connect With Us" />}
                 />
             </div>
             <ServicesPanel />
@@ -311,4 +305,4 @@ const HomePage = () => {
         </div>
     )
 }
-export default HomePage
+export default AboutUs

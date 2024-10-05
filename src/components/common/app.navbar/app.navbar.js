@@ -120,7 +120,7 @@ const AppNavbar = (props) => {
                                             Home
                                         </Button>
                                     </Link>
-                                    <Link to="About us" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                    <Link to="About-us" onClick={() => redirect('/about')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                                         <Button variant="none" className={clsx(classes.textStyle, "text-transform-none ml-2")}>
                                             About us
                                         </Button>
