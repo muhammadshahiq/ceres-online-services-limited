@@ -11,7 +11,7 @@ const ContentActionBanner = (props) => {
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     return (
-        <Container maxWidth={clsx(!mobileWidth && 'lg', mobileWidth && 'xl')}>
+        <Container maxWidth={clsx(!mobileWidth && 'xl', mobileWidth && 'xl')}>
             <Box className={clsx(hideBackgroundColor ? '' : classes.contentBannerStyle, 'pt-3 pb-3 position-relative')}>
                 {waveTheme == "1" ?
                     <>

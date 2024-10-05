@@ -5,7 +5,7 @@ import AppNavbar from '../../components/common/app.navbar/app.navbar';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Button, Container, Grid } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { useStyle } from './home.page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
@@ -17,6 +17,7 @@ import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
 import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
 import ServicesPanel from '../../components/common/services-panel/services-panel';
+import Testinomial from '../../components/common/testinomial/testinomial';
 
 const HomePage = () => {
     const tabletWidth = IsTabletWidth()
@@ -164,64 +165,129 @@ const HomePage = () => {
             linkText: "Learn More",
         }
     ]
+
+    const blogsContent = [
+        {
+            // tag: "",
+            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            // avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            image: `${process.env.PUBLIC_URL}/assets/images/sampIeImage.svg`,
+            cardFlex: true,
+            cardBackgroundColor: true,
+            title: "Providing Medical writing services",
+            label: 'provide regulatory writing for you to gain marketing authorisation',
+            description: "Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals.",
+            linkText: "Read full article",
+            gridSizes: [{
+                sm: 12,
+                md: 12,
+                lg: 12
+            }]
+        },
+        {
+            // tag: "",
+            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            // avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            image: `${process.env.PUBLIC_URL}/assets/images/sampIeImage.svg`,
+            cardFlex: false,
+            cardBackgroundColor: true,
+            title: "Providing Medical writing services",
+            // label: 'provide regulatory writing for you to gain marketing authorisation',
+            description: "Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals.",
+            linkText: "Read full article",
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
+        },
+        {
+            // tag: "",
+            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            // avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            image: `${process.env.PUBLIC_URL}/assets/images/sampIeImage.svg`,
+            cardFlex: false,
+            cardBackgroundColor: true,
+            title: "Providing Medical writing services",
+            // label: 'provide regulatory writing for you to gain marketing authorisation',
+            description: "Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals.",
+            linkText: "Read full article",
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
+        }
+    ]
     return (
         <div>
-            <BackgroundImageBanner
-                image={`${process.env.PUBLIC_URL}/assets/images/men-banner-1.svg`}
-                title='Bring your medical communication'
-                label='projects to life on a global scale.'
-                description="We provide precise medical writing and regulatory documentation, delivered on time, with clear messaging, and within budget."
-                buttonText='What we offers'
-                tickerImages={tickerImages}
-            />
-            <ContentActionBanner
-                buttonText="Lets Connect"
-                title='Start’s from experiments till goto Market Strategy'
-                description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
-                footer={<AppButton buttonText="Get in Touch" />}
-            />
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <BackgroundImageBanner
+                    image={`${process.env.PUBLIC_URL}/assets/images/men-banner-1.svg`}
+                    title='Bring your medical communication'
+                    label='projects to life on a global scale.'
+                    description="We provide precise medical writing and regulatory documentation, delivered on time, with clear messaging, and within budget."
+                    buttonText='What we offers'
+                    tickerImages={tickerImages}
+                />
+            </div>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <ContentActionBanner
+                    buttonText="Lets Connect"
+                    title='Start’s from experiments till goto Market Strategy'
+                    description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
+                    footer={<AppButton buttonText="Get in Touch" />}
+                />
+            </div>
             <ServicesPanel />
-            <CircularImageCardPanel
-                justifyContent="center"
-                title='Our Therapeutic Areas'
-                description="We have extensive experience across all therapeutic areas, with a particular focus on providing medical writing services for the following:"
-                cardItems={professionalPackagesData}
-            />
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <CircularImageCardPanel
+                    justifyContent="center"
+                    title='Our Therapeutic Areas'
+                    description="We have extensive experience across all therapeutic areas, with a particular focus on providing medical writing services for the following:"
+                    cardItems={professionalPackagesData}
+                />
+            </div>
             <AppBannerPanel
-                maxWidth="md"
-                classNames="pl-0 pr-0"
+                maxWidth="lg"
+                // classNames="pl-0 pr-0"
                 leftSideContent={<img
                     src={`${process.env.PUBLIC_URL}/assets/images/telescope-image.svg`}
-                    height={!(mobileWidth || tabletWidth) ? '520px' : tabletWidth ? '400px' : '400px'}
+                    height={!(mobileWidth || tabletWidth) ? '450px' : tabletWidth ? '400px' : '400px'}
                     width='100%'
                 />}
-                rightSideContent={<AppContentBox
-                    title='Our mission is to discover molecules & Deliver to the Market'
-                    label='From discovery to delivery, we craft the science that changes lives.'
-                    description="We're dedicated to supporting our industry partners in driving therapeutic innovation with expert medical writing and regulatory documentation, guiding you every step of the way from molecule to market."
-                />}
+                rightSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                    <AppContentBox
+                        title='Our mission is to discover molecules & Deliver to the Market'
+                        label='From discovery to delivery, we craft the science that changes lives.'
+                        description="We're dedicated to supporting our industry partners in driving therapeutic innovation with expert medical writing and regulatory documentation, guiding you every step of the way from molecule to market."
+                    />
+                </div>}
             />
-            <ContentActionBanner
-                buttonText="Why US"
-                waveTheme="1"
-                title='Why work with us? '
-                description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
-                footer={<AppButton buttonText="Get in Touch" />}
-            >
-                <Container maxWidth='md' className='pl-5 pr-5'>
-                    <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-2')}>
-                        {workingWithUsContent && workingWithUsContent.map((data, index) => {
-                            return <Grid key={index} item xs={12} sm={6} md={6} lg={6} className=''>
-                                <CircularImageCard
-                                    title={data && data.title}
-                                    description={data && data.description}
-                                />
-                            </Grid>
-                        })}
-                    </Grid>
-                </Container>
-            </ContentActionBanner>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2', 'overflow-hidden')}>
+                <ContentActionBanner
+                    buttonText="Why US"
+                    waveTheme="1"
+                    title='Why work with us? '
+                    description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
+                    footer={<AppButton buttonText="Get in Touch" />}
+                >
+                    <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5')}>
+                        <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-2')}>
+                            {workingWithUsContent && workingWithUsContent.map((data, index) => {
+                                return <Grid key={index} item xs={12} sm={6} md={6} lg={6} className=''>
+                                    <CircularImageCard
+                                        title={data && data.title}
+                                        description={data && data.description}
+                                    />
+                                </Grid>
+                            })}
+                        </Grid>
+                    </Container>
+                </ContentActionBanner>
+            </div>
             <CircularImageCardPanel
+                // classNames="pl-5 pr-5"
                 maxWidth='lg'
                 title='Meet Our Team of Experts'
                 description="From discovery to delivery, we craft the science that changes lives."
@@ -229,32 +295,19 @@ const HomePage = () => {
                 cardItems={teamExpertsData}
                 buttonText="Join Our Team"
             />
-            {/* <div className={clsx(!(mobileWidth || tabletWidth) && 'professional-section')}>
-                <CircularImageCardPanel
-                    title='PROFESSIONAL PACKAGES'
-                    buttontext='Explore Pricing'
-                    cardItems={professionalPackagesData}
-                />
-            </div>
+            {/* <div className='pt-3 pb-3'>
+                <Testinomial />
+            </div> */}
             <CircularImageCardPanel
-                title='POPULAR SERVICES'
-                buttontext='Explore Pricing'
-                cardItems={popularServicesData}
+                maxWidth='lg'
+                // classNames='pl-5 pr-5'
+                justifyContent="center"
+                title='Our latest blogs'
+                description="Read our latest blogs on women’s health, and other therapeutic areas that we focus on."
+                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                cardItems={blogsContent}
+                buttonText="View All Blogs"
             />
-            <div>
-                <VideoContentSection />
-            </div>
-            <div>
-                <Carousel />
-            </div>
-            <CircularImageCardPanel
-                title='RECENTLY POSTED'
-                buttontext='More Posts'
-                cardItems={recentlyPostData}
-            />
-            <FaqsAndContactSection />
-           
-            <Partners /> */}
         </div>
     )
 }

@@ -13,9 +13,9 @@ const ServicesPanel = () => {
     return (
         <div>
             <AppBannerPanel
-                maxWidth="md"
-                classNames="pl-0 pr-0"
-                leftSideContent={<div className='pl-4 pr-4'><AppContentBox
+                maxWidth="lg"
+                // classNames="pl-0 pr-0"
+                leftSideContent={<div className='pl-5 pr-5'><AppContentBox
                     title="Providing Medical writing services"
                     label="provide regulatory writing for you to gain marketing authorisation"
                     description="Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals."

@@ -1,17 +1,28 @@
 import { makeStyles } from "@mui/styles";
 export const useStyle = makeStyles((theme) => ({
+    cardBackgroundColor: {
+        backgroundColor: '#f7f7f7',
+        borderRadius: '24px',
+        cursor: 'pointer',
+        border: '0px',
+        boxShadow:'none',
+        // border: '0px'
+        "&:hover": {
+            backgroundColor: theme.palette.ternary.main,
+        }
+    },
     card: {
         backgroundColor: theme.palette.background.paper,
         borderRadius: '8px',
         cursor: 'pointer',
         border: `1.5px solid ${theme.palette.primary.main}`,
         // border: '0px'
-        // "&:hover": {
-        //     border: `1px solid #fff`
-        // }
+        "&:hover": {
+            backgroundColor: theme.palette.ternary.main,
+        }
     },
     selectedCard: {
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.ternary.main,
         borderRadius: '8px',
         border: `1.5px solid ${theme.palette.primary.main}`,
         // "&:hover": {
@@ -19,16 +30,16 @@ export const useStyle = makeStyles((theme) => ({
         // }
     },
     cardContent: {
-        backgroundColor: theme.palette.background.paper,
+        // backgroundColor: theme.palette.background.paper,
         // border: `1.5px solid ${theme.palette.primary.main}`,
         minHeight: '150px',
         boxShadow: 'none',
-        "&:hover": {
-            backgroundColor: theme.palette.ternary.main,
-        }
+        // "&:hover": {
+        //     backgroundColor: theme.palette.ternary.main,
+        // }
     },
     selectedCardContent: {
-        backgroundColor: theme.palette.ternary.main,
+        // backgroundColor: theme.palette.ternary.main,
         // border: `1.5px solid ${theme.palette.primary.main}`,
         minHeight: '150px',
         boxShadow: 'none'

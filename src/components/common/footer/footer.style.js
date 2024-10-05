@@ -7,21 +7,24 @@ export const useStyle = makeStyles((theme) => ({
         // maxWidth: '1440px'
     },
     textStyle: {
-        color: theme.palette.background.paper,
+        color: theme.palette.primary.main,
     },
     gridStyle: {
-        height: "auto",
-        textAlign: 'center'
+        backgroundColor: theme.palette.background.paper,
+        height: "100%"
     },
-    footerStyle2: {
-        background: theme.palette.primary.main,
-        textAlign: 'center'
+    footerBannerStyle: {
+        border: `1.5px solid ${theme.palette.primary.main}`,
+        borderRadius: '6.64px',
     },
-    iconStyling: {
-        background: theme.palette.primary.main,
-        padding: '8px',
-        "&:hover": {
-            background: theme.palette.secondary.main,
-        }
+    rightBanner: {
+        height: '120px'
+    },
+    resRightBanner: {
+        backgroundColor: '#70E000',
+        minHeight: '50px'
+    },
+    leftBanner: {
+        minHeight: '120px'
     }
 }));

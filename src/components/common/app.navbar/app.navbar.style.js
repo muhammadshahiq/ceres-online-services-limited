@@ -69,7 +69,7 @@ export const useStyle = makeStyles(theme => ({
     drawerPaper: {
         background: theme.palette.background.paper,
         // marginTop: '60px',
-        width: '50%',
+        width: '70%',
         boxShadow: 'none !important'
     },
     drawerOnTablet: {

@@ -95,7 +95,7 @@ const AppNavbar = (props) => {
                     position="relative"
                     className={clsx(classes.appNavbar, 'm-auto position-relative')}
                 >
-                    <Container maxWidth="lg" className='p-0'>
+                    <Container maxWidth="xl" className=''>
                         <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-2 pb-2")}>
                             <Grid container columnSpacing={2} className='h-100 d-flex justify-content-center align-items-center'>
                                 <Grid item md={3} lg={3.5} className='h-100' >

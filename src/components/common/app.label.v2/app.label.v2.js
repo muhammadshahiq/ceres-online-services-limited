@@ -6,10 +6,15 @@ import { IsMobileWidth, IsTabletWidth } from '../utill/utils';
 const AppLabelV2 = (props) => {
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
-    const { label, value } = props
+    const { label, width, height, iconSrc, divider } = props
     return (
         <div>
-            <div className='w-100 d-flex gap-30 pt-2 pb-2 w-100 align-items-center justify-content-between'>
+            {divider ?
+                <div className='w-100 d-flex justify-content-center align-items-center'>
+                    <Divider sx={{ width: '100%', backgroundColor: '#000', height: '1px' }} />
+                </div> : null
+            }
+            <div className='w-100 d-flex gap-30 pt-3 pb-3 w-100 align-items-center justify-content-between font-weight-bold'>
                 {label ?
                     <Typography
                         variant={clsx(!(mobileWidth || tabletWidth) && 'body2', (mobileWidth || tabletWidth) && 'body3')}
@@ -17,16 +22,10 @@ const AppLabelV2 = (props) => {
                         {label}
                     </Typography>
                     : null}
-                {value ?
-                    <Typography
-                        variant={clsx(!(mobileWidth || tabletWidth) && 'body2', (mobileWidth || tabletWidth) && 'body3')}
-                        color='primary'>
-                        {value}
-                    </Typography>
-                    : null}
-            </div>
-            <div className='w-100 d-flex justify-content-center align-items-center'>
-                <Divider sx={{ width: '100%' }} />
+                {iconSrc ?
+                    <img src={iconSrc} alt='Social-icon' width={width ? width : '14.44px'} height={height ? height : '14.44px'} />
+                    : null
+                }
             </div>
         </div>
     )

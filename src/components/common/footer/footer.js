@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
-import { Container, Grid, Paper, Typography } from '@mui/material'
+import { Container, Divider, Grid, IconButton, Link, Paper, Typography } from '@mui/material'
 import { useStyle } from './footer.style'
-import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/utils';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../../components/common/utill/utils';
+import AppLabelV2 from '../app.label.v2/app.label.v2';
 
 const Footer = (props) => {
     const classes = useStyle()
@@ -14,80 +14,167 @@ const Footer = (props) => {
         props.push(url);
     }
     return (
-        <Paper elevation={0} className={clsx(classes.footer, 'm-auto', !mobileWidth && 'pt-4', mobileWidth && 'pt-3')}>
-            <Container maxWidth='xl' className='pl-0 pr-0'>
-                <div className={clsx(classes.footerStyle2, 'd-flex justify-content-between align-items-center pt-2 pb-2')}>
-                    <Grid container rowSpacing={1} columnSpacing={2}>
-                        <Grid item xs={12} sm={6} md={4} lg={4} className='pt-3 pb-3'>
-                            <img
-                                height='30px'
-                                width='100%'
-                                src={`${process.env.PUBLIC_URL}/assets/images/logo-Ceres Online Services Limited.svg`}
-                            ></img>
+        <Paper elevation={0} className={clsx(classes.footer, 'm-auto cursor-pointer')}>
+            <Container maxWidth='lg' className='pt-5 pb-5'>
+                <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-5', tabletWidth && 'pl-5', mobileWidth && 'pl-5')}>
+                    <Grid container rowSpacing={2} columnSpacing={5} className={clsx('mt-2 mb-2', classes.footerBannerStyle)}>
+                        <Grid item xs={12} sm={6} md={6} lg={7} className={clsx('d-flex pt-4 pb-4 flex-column justify-content-center align-items-start', classes.leftBanner)}>
+                            <div className='h-100 pr-5'>
+                                <Typography color='primary' className='font-weight-bold'
+                                    variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body1', mobileWidth && 'body1')}>
+                                    Do you need help?
+                                </Typography>
+                                <Typography color='primary' variant='body2' className='pt-2'>
+                                    We will provide detailed information about our services, types of work, and top projects. We will calculate the cost and prepare a commercial proposal.
+                                </Typography>
+                            </div>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={4} lg={4}>
-                            <Typography className='pt-4 pb-4 text-white cursor-pointer' variant={clsx(!(mobileWidth || tabletWidth) && 'body2', tabletWidth && 'body2', mobileWidth && 'caption')}>
-                                Copyright © Ceres Online Services Limited LLC, 2024
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} lg={4}>
-                            <Grid container className='d-flex justify-content-center align-items-center pt-3 pb-3'>
-                                <Grid item xs={12} sm={12} md={12} lg={12}>
-                                    <div className={clsx(classes.gridStyle, 'd-flex')}>
-                                        <div className={clsx('w-100 d-flex justify-content-center gap-20')}>
-                                            <div className={clsx(classes.iconStyling, "cursor-pointer")}>
-                                                <a>
-                                                    <LazyLoadImage
-                                                        effect="blur"
-                                                        src={`${process.env.PUBLIC_URL}/assets/images/envelope-icon.svg`}
-                                                        height='28px'
-                                                        width='28px'
-                                                        alt="env-icon"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <div className={clsx(classes.iconStyling, "cursor-pointer")}>
-                                                <a>
-                                                    <LazyLoadImage
-                                                        effect="blur"
-                                                        src={`${process.env.PUBLIC_URL}/assets/images/facebook-icon.svg`}
-                                                        height='28px'
-                                                        alt="fb-icon"
-                                                        width='28px'
-                                                    />
-                                                </a>
-                                            </div>
-                                            <div className={clsx(classes.iconStyling, "cursor-pointer")}>
-                                                <a>
-                                                    <LazyLoadImage
-                                                        effect="blur"
-                                                        src={`${process.env.PUBLIC_URL}/assets/images/twitter-icon.svg`}
-                                                        height='28px'
-                                                        alt="twitter-icon"
-                                                        width='28px'
-                                                    />
-                                                </a>
-                                            </div>
-                                            <div className={clsx(classes.iconStyling, "cursor-pointer")}>
-                                                <a>
-                                                    <LazyLoadImage
-                                                        effect="blur"
-                                                        src={`${process.env.PUBLIC_URL}/assets/images/plus-icon.svg`}
-                                                        height='28px'
-                                                        alt="add-icon"
-                                                        width='28px'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Grid>
-                            </Grid>
+                        <Grid item xs={12} sm={6} md={6} lg={5} className={clsx('d-flex pt-4 pb-4 justify-content-center align-items-center position-relative overflow-hidden', !(mobileWidth || tabletWidth) && classes.rightBanner, mobileWidth && classes.resRightBanner)}>
+                            {!(mobileWidth || tabletWidth) &&
+                                <div className='position-absolute w-100'>
+                                    <img
+                                        height='120px'
+                                        width='100%'
+                                        src={`${process.env.PUBLIC_URL}/assets/images/Ellipse.png`}
+                                    ></img>
+                                </div>
+                            }
+                            <Link className={clsx('d-flex justify-content-center align-items-center z-index')}>
+                                <Typography color='primary' variant={clsx(!(mobileWidth || tabletWidth) && "body3", (mobileWidth || tabletWidth) && 'body3')}>
+                                    Get consultation
+                                </Typography>
+                                <img className='ml-2' src={`${process.env.PUBLIC_URL}/assets/images/arrow-right.svg`} alt='arrow-right-icon' width='13px' height='7px' />
+                            </Link>
                         </Grid>
                     </Grid>
                 </div>
+                <Grid container rowSpacing={2} columnSpacing={5} className='pt-4'>
+                    <Grid item xs={12} sm={4} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
+                        <div>
+                            <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
+                                variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
+                                Nav
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Home
+                            </Typography>
+                            <Typography onClick={() => redirect("/about")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                About
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Team
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Our Ethics
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
+                                variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
+                                Services
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Medical
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Communication
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Regulatory Writing
+                            </Typography>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} sm={4} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
+                        <div>
+                            <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
+                                variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
+                                Therapeutic Areas
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Gene therapy
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Immuno-oncology
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Infectious diseases
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Rare diseases
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Women’s health
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Vaccines
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
+                                variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
+                                Info
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                About us
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Works
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Contacts
+                            </Typography>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={4} className={clsx(classes.gridStyle, !(mobileWidth || tabletWidth) && 'justify-content-end text-right', mobileWidth && 'justify-content-start text-left', 'w-100 d-flex pt-2 pb-5')}>
+                        <div>
+                            <div className="cursor-pointer pt-3 pb-3">
+                                <img
+                                    height='53px'
+                                    width='227px'
+                                    src={`${process.env.PUBLIC_URL}/assets/images/ceres-logo.svg`}
+                                ></img>
+                            </div>
+                            <div className='w-100 d-flex justify-content-end pb-2'>
+                                <Divider sx={{ width: '20%', backgroundColor: '#000', height: '1px', right: 0 }} />
+                            </div>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                +1 981 341-23-19
+                            </Typography>
+                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                hello@caresonline.com
+                            </Typography>
+                        </div>
+                    </Grid>
+                </Grid>
+                <Grid container rowSpacing={2} columnSpacing={5}>
+                    <Grid item xs={12} sm={4} md={4} lg={4}>
+                        <AppLabelV2 divider label='Instagram' iconSrc={`${process.env.PUBLIC_URL}/assets/images/instagram.svg`} />
+                    </Grid>
+                    <Grid item xs={12} sm={4} md={4} lg={4}>
+                        <AppLabelV2 divider label='Whatsapp' iconSrc={`${process.env.PUBLIC_URL}/assets/images/whatsapp.svg`} />
+                    </Grid>
+                </Grid>
+                <Grid container rowSpacing={2} columnSpacing={5}>
+                    <Grid item xs={6} sm={6} md={6} lg={6}>
+                        <AppLabelV2
+                            label={`©${new Date().getFullYear()}— Copyright`}
+                            divider={false}
+                        />
+
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6} lg={6} className='d-flex justify-content-end'>
+                        <IconButton onClick={scrollToTop}>
+                            <img
+                                width="54.14px"
+                                height="54.14px"
+                                src={`${process.env.PUBLIC_URL}/assets/images/scrollToTop.svg`}
+                                alt='Social-icon'
+                            />
+                        </IconButton>
+                    </Grid>
+                </Grid>
             </Container>
-        </Paper>
+        </Paper >
     )
 }
 

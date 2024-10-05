@@ -7,13 +7,14 @@ import CircularImageCard from '../../../components/common/circular.image.card/ci
 import AppButton from '../app.button/app.button';
 
 const CircularImageCardPanel = (props) => {
-    const { title, description, buttonText, justifyContent, cardItems = [], topHeaderImage, maxWidth } = props
+    const { title, description, buttonText, justifyContent, cardItems = [], topHeaderImage, maxWidth, classNames } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
+    
     return (
         <div className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5', (mobileWidth || tabletWidth) && 'pt-3 pb-3')}>
-            <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'lg' : mobileWidth ? 'sm' : 'lg')}>
+            <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'xl' : mobileWidth ? 'sm' : 'lg')} className={clsx(classNames)}>
                 {justifyContent === "center" ?
                     <Container maxWidth='md'>
                         <div className={clsx(!(mobileWidth || tabletWidth) && "pt-1 pb-1 w-100", (mobileWidth || tabletWidth) && 'pt-2 pb-2 w-100 d-flex flex-column justify-content-center align-items-center')}>
@@ -60,10 +61,12 @@ const CircularImageCardPanel = (props) => {
                             </Button> : null} */}
                         </div>
                     </div>}
-                <Grid container rowSpacing={3} spacing={3} className={clsx(!mobileWidth && 'mt-3 mb-2', mobileWidth && 'mt-2 mb-2')}>
+                <Grid container rowSpacing={3} columnSpacing={3} className={clsx(!mobileWidth && 'mt-3 mb-2', mobileWidth && 'mt-2 mb-2')}>
                     {cardItems && cardItems.map((item, i) => {
-                        return <Grid key={i} item xs={12} sm={6} md={4} lg={4} className='d-flex justify-content-start'>
+                        return <Grid key={i} item xs={12} sm={item && item.gridSizes && item.gridSizes.length && item.gridSizes[0].sm ? item.gridSizes[0].sm : 6} md={item && item.gridSizes && item.gridSizes.length && item.gridSizes[0].md ? item.gridSizes[0].md : 4} lg={item && item.gridSizes && item.gridSizes.length && item.gridSizes[0].lg ? item.gridSizes[0].lg : 4} className='d-flex justify-content-start'>
                             <CircularImageCard
+                                cardFlex={item && item.cardFlex}
+                                cardBackgroundColor={item && item.cardBackgroundColor}
                                 tag={item && item.tag}
                                 titleIconSrc={item && item.titleIconSrc}
                                 label={item && item.label}
@@ -77,7 +80,7 @@ const CircularImageCardPanel = (props) => {
                         </Grid>
                     })}
                 </ Grid>
-                {buttonText ? <div className={clsx("pt-4 pb-4 text-center")}>
+                {buttonText ? <div className={clsx("pt-5 text-center")}>
                     <AppButton buttonText={buttonText} />
                 </div> : null}
             </Container>
