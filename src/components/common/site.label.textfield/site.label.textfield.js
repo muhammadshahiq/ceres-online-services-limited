@@ -95,8 +95,8 @@ export default function SiteLabelTextField(props) {
                         <div className="w-100">
                             <div className="d-flex w-100 justify-content-between label">
                                 {topAdornment ? (
-                                    <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-white pt-1 pl-2'>*</Typography> : 0} >
-                                        <Typography variant="body2" className="max-width-content text-white">
+                                    <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-dark pt-1 pl-2'>*</Typography> : 0} >
+                                        <Typography variant="body2" className="max-width-content text-dark">
                                             <label htmlFor="text-field">
                                                 {topAdornment}
                                             </label>
@@ -174,8 +174,8 @@ export default function SiteLabelTextField(props) {
                 <div className="w-100">
                     <div className="d-flex w-100 justify-content-between label">
                         {topAdornment ? (
-                            <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-white pt-1 pl-2'>*</Typography> : 0} >
-                                <Typography  variant="body2" className="max-width-content text-white">
+                            <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-dark pt-1 pl-2'>*</Typography> : 0} >
+                                <Typography variant="body2" className="max-width-content text-dark">
                                     <label htmlFor="text-field">
                                         {topAdornment}
                                     </label>
@@ -231,8 +231,8 @@ export default function SiteLabelTextField(props) {
                     <div className="w-100">
                         <div className="d-flex w-100 justify-content-between label">
                             {topAdornment ? (
-                                <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-white  pt-1 pl-2'>*</Typography> : 0} >
-                                    <Typography variant="body2" className="max-width-content text-white">
+                                <Badge badgeContent={showSteric ? <Typography variant='h6' className='d-flex align-items-center text-dark  pt-1 pl-2'>*</Typography> : 0} >
+                                    <Typography variant="body2" className="max-width-content text-dark">
                                         <label htmlFor="text-field">
                                             {topAdornment}
                                         </label>
@@ -283,6 +283,7 @@ export default function SiteLabelTextField(props) {
                                             </div>
                                         ) : (
                                             <TextField
+                                                // sx={{ minHeight: '120px' }}
                                                 inputRef={ref}
                                                 onBlur={props.onBlur}
                                                 value={value}

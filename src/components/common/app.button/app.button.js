@@ -13,6 +13,7 @@ const AppButton = (props) => {
     return (
         <div>
             <Button variant='contained'
+                onClick={props.onClick}
                 className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', mobileWidth && 'pl-3 pr-3', 'text-transform-none', buttonTheme == "ROUNDED" ? classes.btnStyle2 : classes.btnStyle)}>
                 {buttonText}
             </Button>

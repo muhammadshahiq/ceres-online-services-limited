@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles'
 export const useStyles = makeStyles((theme) => ({
   textColor: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
   nooutline: {
     outline: 'none',
@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme) => ({
     border: 'none',
   },
   iconColor: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
   endAdn: {
     paddingRight: '3.5px'
@@ -31,8 +31,17 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: 14,
     fontWeight: 300,
     boxShadow: 'none',
-    fontFamily: 'Nunito',
+    fontFamily: 'Outfit',
   },
+  // inputTextArea: {
+  //   textOverflow: "ellipsis",
+  //   height: 8,
+  //   fontSize: 14,
+  //   fontWeight: 300,
+  //   boxShadow: 'none',
+  //   fontFamily: 'Outfit',
+  //   height: '120px'
+  // },
   passwordInput: {
     marginLeft: theme.spacing(1),
     flex: 1,
@@ -44,7 +53,7 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: 12,
     fontWeight: 300,
     boxShadow: 'none',
-    fontFamily: 'Nunito',
+    fontFamily: 'Outfit',
     textOverflow: "ellipsis",
   },
   inputPassword: {
@@ -61,7 +70,9 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
     outline: 'none',
     background: "#d6e0eb",
-    // border: '1px solid rgba(28, 52, 84, 0.26)',
+    borderRadius: '8px',
+    fontFamily: 'Outfit',
+    // border: '0.5px solid #161A1D80',
     display: 'flex',
     alignItems: 'center',
     overflow: 'auto'
@@ -73,21 +84,25 @@ export const useStyles = makeStyles((theme) => ({
     position: "relative",
     boxShadow: 'none',
     outline: 'none',
-    background: '#d9d9d9',
-    border: '1px solid rgba(28, 52, 84, 0.26)',
+    background: '#fff',
+    borderRadius: '8px',
+    fontFamily: 'Outfit',
+    border: '0.5px solid #161A1D80',
     display: 'flex',
     alignItems: 'center',
     overflow: 'auto'
   },
   textArea: {
-    maxHeight: '100px',
+    minHeight: '130px',
     // border: `0px !important`,
     borderRadius: '0px',
     position: "relative",
     boxShadow: 'none',
     outline: 'none',
-    background: '#d9d9d9',
-    border: '1px solid rgba(28, 52, 84, 0.26)',
+    background: '#fff',
+    borderRadius: '8px',
+    fontFamily: 'Outfit',
+    border: '0.5px solid #161A1D80',
     display: 'flex',
     alignItems: 'center',
     overflow: 'auto'
@@ -97,7 +112,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   selectedPaper: {
     boxShadow: '0 0 2px 0 #701367 !important',
-    background: '#fdfdfd !important',
+    background: '#fff !important',
   },
   iconSize: {
     fontSize: '15px !important',

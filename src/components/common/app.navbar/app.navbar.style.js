@@ -106,5 +106,18 @@ export const useStyle = makeStyles(theme => ({
     },
     textStyle: {
         color: theme.palette.primary.main
-    }
+    },
+  
+    contactDrawerPaper: {
+        background: theme.palette.background.paper,
+        // marginTop: '60px',
+        width: '80%',
+        boxShadow: 'none !important'
+    },
+    contactDrawerOnTablet: {
+        background: theme.palette.background.paper,
+        // marginTop: '60px',
+        width: '580px',
+        boxShadow: 'none !important'
+    },
 }))

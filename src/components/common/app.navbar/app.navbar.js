@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-scroll';
 import AppDrawer from "./drawer";
 import DropDownMenu from "../dropdown.menu/dropdown.menu";
+import AppContactDrawer from "./drawer.contact";
 
 const AppNavbar = (props) => {
     const classes = useStyle();
@@ -18,6 +19,18 @@ const AppNavbar = (props) => {
     const [bgColorChange, setBgColorChange] = useState(false);  // For background color change on scroll
 
     const stickyRef = useRef(null);
+    const [state, setState] = useState({
+        isContactDrawerOpen: false
+    })
+
+    const showContactDrawer = () => {
+        setState({ ...state, isContactDrawerOpen: true });
+    };
+
+    const hideContactDrawer = () => {
+        setState({ ...state, isContactDrawerOpen: false });
+    };
+
 
     const redirect = (url) => {
         navigate(url);
@@ -88,6 +101,7 @@ const AppNavbar = (props) => {
         };
     }, []);
 
+
     return (
         <div className="position-relative">
             {!mobileWidth && !tabletWidth ? (
@@ -125,7 +139,7 @@ const AppNavbar = (props) => {
                                             About us
                                         </Button>
                                     </Link>
-                                    <Link to="Services" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                    <Link to="Services" onClick={() => redirect('/services')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                                         <Button variant="none" className={clsx(classes.textStyle, "text-transform-none ml-2")}>
                                             Services
                                         </Button>
@@ -142,7 +156,7 @@ const AppNavbar = (props) => {
                                             </div>
                                         })}
                                     </div>
-                                    <Link to="Blog" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                    <Link to="Blog" onClick={() => redirect('/blogs')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                                         <Button variant="none" className={clsx(classes.textStyle, "text-transform-none ml-2")}>
                                             Blog
                                         </Button>
@@ -156,7 +170,7 @@ const AppNavbar = (props) => {
                                     </div>
                                 </Grid>
                                 <Grid item md={3} lg={2} className='h-100 d-flex justify-content-end' >
-                                    <Button variant="outlined" className={clsx(classes.btn, "text-transform-uppercase font-weight-boldclasses.textStyle, pt-2 pb-2 pl-4 pr-4")}>
+                                    <Button onClick={showContactDrawer} variant="outlined" className={clsx(classes.btn, "text-transform-uppercase font-weight-boldclasses.textStyle, pt-2 pb-2 pl-4 pr-4")}>
                                         Contact Us
                                     </Button>
                                 </Grid>
@@ -180,6 +194,15 @@ const AppNavbar = (props) => {
                     </Container>
                 </AppBar>
             )}
+
+            {
+                state.isContactDrawerOpen ?
+                    <AppContactDrawer
+                        isContactDrawerOpen={state.isContactDrawerOpen}
+                        showContactDrawer={showContactDrawer}
+                        hideContactDrawer={hideContactDrawer}
+                    /> : null
+            }
         </div>
     );
 };

@@ -12,6 +12,7 @@ import PageNotFound from './container/not.found.page/not.found.page';
 import Footer from './components/common/footer/footer';
 import AppNavbar from './components/common/app.navbar/app.navbar';
 import AboutUs from './container/about.us.page/about.us.page';
+import BlogsPage from './container/blogs.page/blogs.page';
 // import Loadable from 'react-loadable';
 // const HomePage = Loadable({
 //   loader: () => import(/*webpackChunkName:"UPM "*/'./container/home.page/home.page'),
@@ -42,6 +43,9 @@ function App() {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/about" element={<AboutUs />} />
+                  <Route path="/blogs" element={<BlogsPage />} />
+                  <Route path="/career" element={<AboutUs />} />
+                  <Route path="/services" element={<AboutUs />} />
                   <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />
