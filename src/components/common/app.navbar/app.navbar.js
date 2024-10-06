@@ -39,6 +39,7 @@ const AppNavbar = (props) => {
     const dropdownData = [
         {
             name: 'Therapeutic areas',
+            path: '/therapeutic-areas',
             items: {
                 // label: 'Kaichain',
                 // imageSrc: `${process.env.PUBLIC_URL}/assets/images/logo-img-1.png`,
@@ -148,6 +149,7 @@ const AppNavbar = (props) => {
                                         {dropdownData && dropdownData.map((data, index) => {
                                             return <div key={index}>
                                                 <DropDownMenu
+                                                    path={data.path}
                                                     name={data.name}
                                                     label={data.items && data.items.label}
                                                     imageSrc={data.items && data.items.imageSrc}

@@ -4,15 +4,20 @@ import { Container, Divider, Grid, IconButton, Link, Paper, Typography } from '@
 import { useStyle } from './footer.style'
 import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../../components/common/utill/utils';
 import AppLabelV2 from '../app.label.v2/app.label.v2';
+import { useNavigate } from "react-router-dom";
+    
 
 const Footer = (props) => {
     const classes = useStyle()
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
 
+    const navigate = useNavigate();
+
     const redirect = (url) => {
-        props.push(url);
-    }
+        navigate(url);
+    };
+    
     return (
         <Paper elevation={0} className={clsx(classes.footer, 'm-auto cursor-pointer')}>
             <Container maxWidth='lg' className='pt-5 pb-5'>

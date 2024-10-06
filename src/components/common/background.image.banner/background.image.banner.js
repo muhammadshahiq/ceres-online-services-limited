@@ -9,7 +9,7 @@ import AppContentBox from '../app.content.box/app.content.box';
 import AppButton from '../app.button/app.button';
 
 const BackgroundImageBanner = (props) => {
-    const { image, title, description, footer, label, buttonText, tickerImages } = props
+    const { image, title, description, footer, label, buttonText, tickerImages, className } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
@@ -19,7 +19,7 @@ const BackgroundImageBanner = (props) => {
             <Container maxWidth='xl' className={clsx((mobileWidth || tabletWidth) && 'pl-0 pr-0 position-relative pt-5')}>
                 <Grid container>
                     <Grid item xs={12} sm={12} md={6} lg={6} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5', mobileWidth && 'pt-5 pb-2')}>
-                        <Container maxWidth='sm' className={clsx(!(mobileWidth || tabletWidth) && 'pt-3 pb-3 pl-0 pr-0', tabletWidth && 'pt-5 pb-5 pl-0 pr-0')}>
+                        <Container maxWidth='sm' className={clsx(!(mobileWidth || tabletWidth) && 'pt-3 pb-3 pl-0 pr-0', tabletWidth && 'pt-5 pb-5 pl-0 pr-0', className)}>
                             <AppContentBox
                                 title={title}
                                 label={label}

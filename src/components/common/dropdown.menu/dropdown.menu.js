@@ -21,6 +21,7 @@ export default function DropDownMenu(props) {
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        redirectTo('/therapeutic-areas')
     };
 
     const handleClose = () => {
