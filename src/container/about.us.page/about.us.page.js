@@ -13,6 +13,9 @@ import AppContentBox from '../../components/common/app.content.box/app.content.b
 import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
 import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
+import CircularImageCardV2 from '../../components/common/circular.image.card.v2/circular.image.card.v2';
+import AppLabel from '../../components/common/app.label/app.label';
+import Carousel from '../../components/common/carousel/carousel';
 
 const AboutUs = () => {
     const tabletWidth = IsTabletWidth()
@@ -81,20 +84,53 @@ const AboutUs = () => {
 
     const workingWithUsContent = [
         {
-            title: "Deliver",
-            description: "We constantly deliver error-free medical writing and regulatory documentation on time, on message, and on budget.",
+            image: `${process.env.PUBLIC_URL}/assets/images/Chat_Icon_UIA.svg`,
+            title: "Starts From Molecule Discovery",
+            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation."
         },
         {
-            title: "Experts",
-            description: "We use our experience and expertise to produce high-quality documentation for use across all stages of the clinical development lifecycle.",
+            image: `${process.env.PUBLIC_URL}/assets/images/globe.svg`,
+            title: "Till Actual Market Finish Product",
+            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. "
+        }
+    ]
+
+    const policiesContent = [
+        {
+            title: "Compliance Protocols",
+            description: "At Ceres Online, we prioritize compliance, ensuring our team receives regular training to follow all relevant industry codes and regulations.",
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
         },
         {
-            title: "Partnership",
-            description: "We work in partnership with our clients to support the diffusion of therapeutic innovation to help transform lives globally.",
+            title: "Planet Health",
+            description: "We care passionately about the environment, planet, and our role as a company to join in the fight against climate change. Irrefutable evidence demonstrates that climate change is a growing existential threat to humanity across the globe",
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
         },
         {
-            title: "Trusted",
-            description: "We are trusted by our life science and pharmaceutical partners to deliver on their medical writing objectives.",
+            title: "Culture Respect",
+            description: `As a team of medical writers, we do not take ourselves too seriously, but we take what we do seriously. Quality is at the heart of everything we do. `,
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
+        },
+        {
+            title: "Rules & Priorities",
+            description: "Guided by firm rules and well-defined priorities, we ensure every action aligns with our commitment to excellence and success to help grow together.",
+            gridSizes: [{
+                sm: 6,
+                md: 6,
+                lg: 6
+            }]
         }
     ]
 
@@ -214,6 +250,25 @@ const AboutUs = () => {
             }]
         }
     ]
+
+    const businessContent = [
+        {
+            label: "Ensure timely, accurate, and on-point medical writing and regulatory documentation within budget",
+            iconSrc: `${process.env.PUBLIC_URL}/assets/images/NI-1.svg`
+        },
+        {
+            label: "Leverage our expertise to create top-tier documentation for every phase of the clinical trial process.",
+            iconSrc: `${process.env.PUBLIC_URL}/assets/images/NI-2.svg`
+        },
+        {
+            label: "Collaborate with life sciences clients to achieve regulatory approvals and successfully commercialize transformative therapies.",
+            iconSrc: `${process.env.PUBLIC_URL}/assets/images/NI-3.svg`
+        },
+        {
+            label: "Lead the industry in client satisfaction and employee well-being.",
+            iconSrc: `${process.env.PUBLIC_URL}/assets/images/NI-4.svg`
+        }
+    ]
     return (
         <div id='About-us'>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
@@ -227,50 +282,20 @@ const AboutUs = () => {
             </div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
+                    maxWidth="lg"
                     buttonText="Our Mission"
                     title='From molecule to market, we write the science that transforms lives.'
-                    description='We support our industry partners in driving therapeutic innovation by providing world-class medical writing and regulatory documentation, from molecule to market.'
+                    description2='We support our industry partners in driving therapeutic innovation by providing world-class medical writing and regulatory documentation, from molecule to market.'
                     footer={<AppButton buttonText="Get Connect With Us" />}
-                />
-            </div>
-            <ServicesPanel />
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
-                <CircularImageCardPanel
-                    justifyContent="center"
-                    title='Our Therapeutic Areas'
-                    description="We have extensive experience across all therapeutic areas, with a particular focus on providing medical writing services for the following:"
-                    cardItems={professionalPackagesData}
-                />
-            </div>
-            <AppBannerPanel
-                maxWidth="lg"
-                // classNames="pl-0 pr-0"
-                leftSideContent={<img
-                    src={`${process.env.PUBLIC_URL}/assets/images/telescope-image.svg`}
-                    height={!(mobileWidth || tabletWidth) ? '450px' : tabletWidth ? '400px' : '400px'}
-                    width='100%'
-                />}
-                rightSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
-                    <AppContentBox
-                        title='Our mission is to discover molecules & Deliver to the Market'
-                        label='From discovery to delivery, we craft the science that changes lives.'
-                        description="We're dedicated to supporting our industry partners in driving therapeutic innovation with expert medical writing and regulatory documentation, guiding you every step of the way from molecule to market."
-                    />
-                </div>}
-            />
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2', 'overflow-hidden')}>
-                <ContentActionBanner
-                    buttonText="Why US"
-                    waveTheme="1"
-                    title='Why work with us? '
-                    description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
-                    footer={<AppButton buttonText="Get in Touch" />}
                 >
-                    <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5')}>
+                    <Container maxWidth='xl' className={clsx(!(mobileWidth || tabletWidth) && 'pl-2 pr-2', 'pt-3 pb-3')}>
                         <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-2')}>
                             {workingWithUsContent && workingWithUsContent.map((data, index) => {
-                                return <Grid key={index} item xs={12} sm={6} md={6} lg={6} className=''>
+                                return <Grid key={index} item xs={12} sm={6} md={6} lg={6}>
                                     <CircularImageCard
+                                        cardFlex
+                                        height="56px"
+                                        image={data && data.image}
                                         title={data && data.title}
                                         description={data && data.description}
                                     />
@@ -280,21 +305,51 @@ const AboutUs = () => {
                     </Container>
                 </ContentActionBanner>
             </div>
-            <CircularImageCardPanel
-                // classNames="pl-5 pr-5"
-                maxWidth='lg'
-                title='Meet Our Team of Experts'
-                description="From discovery to delivery, we craft the science that changes lives."
-                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
-                cardItems={teamExpertsData}
-                buttonText="Join Our Team"
+            <AppBannerPanel
+                maxWidth="lg"
+                // classNames="pl-0 pr-0"
+                leftSideContent={<img
+                    src={`${process.env.PUBLIC_URL}/assets/images/about-men-arrow.svg`}
+                    height={!(mobileWidth || tabletWidth) ? '526px' : tabletWidth ? '480px' : '400px'}
+                    width='100%'
+                />}
+                rightSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                    <AppContentBox
+                        title='Our Business Aims'
+                        description2="We're dedicated to supporting our industry partners in driving therapeutic innovation with expert medical writing and regulatory documentation, guiding you every step of the way from molecule to market."
+                    />
+                    {businessContent && businessContent.map((data, i) => {
+                        return <AppLabel
+                            key={i}
+                            iconSrc={data && data.iconSrc}
+                            description={data && data.label}
+                        />
+                    })}
+                </div>}
             />
-            <div className='pt-3 pb-3'>
+            <CircularImageCardPanel
+                maxWidth='lg'
+                showTag
+                justifyContent="center"
+                title='Our Core Focus'
+                description="At Ceres Online, we prioritize compliance, ensuring our team receives regular training to follow all relevant industry codes and regulations."
+                cardItems={policiesContent}
+            />
+            <div>
+                <CircularImageCardPanel
+                    maxWidth='lg'
+                    title='Meet Our Team of Experts'
+                    description="From discovery to delivery, we craft the science that changes lives."
+                    topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                    cardItems={teamExpertsData}
+                    buttonText="Join Our Team"
+                />
+            </div>
+            <div id='testinomial' className='pt-3 pb-3'>
                 <Testinomial />
             </div>
             <CircularImageCardPanel
                 maxWidth='lg'
-                // classNames='pl-5 pr-5'
                 justifyContent="center"
                 title='Our latest blogs'
                 description="Read our latest blogs on women’s health, and other therapeutic areas that we focus on."

@@ -3,13 +3,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { useStyle } from './circular.image.card.style';
+import { useStyle } from './circular.image.card.v2.style';
 import clsx from 'clsx';
 import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/utils';
 import { Avatar, Button, Link, Stack } from '@mui/material';
 
-const CircularImageCard = (props) => {
-    const { image, title, description, titleIconSrc, height, label, selected, linkText, avatar, cardFlex, cardBackgroundColor } = props
+const CircularImageCardV2 = (props) => {
+    const { image, title, description, titleIconSrc, tag, label, selected, linkText, avatar, cardFlex, cardBackgroundColor } = props
     const classes = useStyle(props)
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
@@ -19,12 +19,12 @@ const CircularImageCard = (props) => {
             {image ?
                 <div className={clsx((cardFlex && !(mobileWidth || tabletWidth)) && 'w-30 pt-4 pb-4 pl-4 pr-4',
                     (cardFlex && mobileWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', (cardFlex && tabletWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', !cardFlex && 'w-100 pt-2 pb-2 pl-2 pr-2',
-                    'position-relative d-flex justify-content-center align-items-start')}>
+                    'position-relative d-flex justify-content-center align-items-center')}>
                     <CardMedia
                         className={clsx(!(mobileWidth || tabletWidth) && classes.cardMedia, tabletWidth && classes.cardMediaOnTablet, mobileWidth && classes.cardMediaOnMobile)}
                         component="img"
                         image={image}
-                        height={height ? height : cardFlex ? '100%' : '180px'}
+                        height={cardFlex ? '100%' : '180px'}
                     />
                 </div> : null
             }
@@ -82,7 +82,7 @@ const CircularImageCard = (props) => {
     )
 }
 
-export default CircularImageCard
+export default CircularImageCardV2
 
 
 // <CircularImageCard

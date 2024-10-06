@@ -6,7 +6,7 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import AppButton from '../app.button/app.button';
 
 const ContentActionBanner = (props) => {
-    const { title, description, label, hideBackgroundColor, footer, buttonText, waveTheme } = props
+    const { title, description, label, hideBackgroundColor, footer, buttonText, waveTheme, maxWidth, description2 } = props
     const classes = useStyle()
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
@@ -46,24 +46,26 @@ const ContentActionBanner = (props) => {
                             ></img>
                         </div>
                     </>
-                    :
-                    <>
-                        <div className='w-100 position-absolute'>
-                            <img
-                                height='100%'
-                                width='100%'
-                                src={`${process.env.PUBLIC_URL}/assets/images/wave-all.png`}
-                            ></img>
-                        </div>
-                        <div className={clsx(!(mobileWidth || tabletWidth) && 'align-items-center', mobileWidth && 'align-items-end bottom-10', 'w-100 position-absolute d-flex justify-content-end h-100 right-10')}>
-                            <img
-                                height='81px'
-                                width='68px'
-                                src={`${process.env.PUBLIC_URL}/assets/images/plus-wave.png`}
-                            ></img>
-                        </div>
-                    </>}
-                <Container maxWidth={clsx(!mobileWidth && 'md', mobileWidth && 'sm')} className='pt-5 pb-5 z-index position-relative'>
+                    : waveTheme == "2" ?
+                        <>
+                            <div className='w-100 position-absolute'>
+                                <img
+                                    height='100%'
+                                    width='100%'
+                                    src={`${process.env.PUBLIC_URL}/assets/images/wave-all.png`}
+                                ></img>
+                            </div>
+                            <div className={clsx(!(mobileWidth || tabletWidth) && 'align-items-center', mobileWidth && 'align-items-end bottom-10', 'w-100 position-absolute d-flex justify-content-end h-100 right-10')}>
+                                <img
+                                    height='81px'
+                                    width='68px'
+                                    src={`${process.env.PUBLIC_URL}/assets/images/plus-wave.png`}
+                                ></img>
+                            </div>
+                        </> :
+                        null
+                }
+                <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'md' : mobileWidth ? 'sm' : 'md')} className='pt-5 pb-5 z-index position-relative'>
                     <div className={clsx(!mobileWidth && 'pt-5 pb-5', mobileWidth && 'w-100 pl-2 pr-2',
                         'd-flex flex-row justify-content-center align-items-center m-auto h-100')}>
                         <div className='w-100 m-auto text-center d-flex flex-column justify-content-center align-items-center pl-3 pr-3'>
@@ -78,13 +80,18 @@ const ContentActionBanner = (props) => {
                                     {label}
                                 </Typography> : null}
                             {description ?
-                                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', (mobileWidth || tabletWidth) && 'body3')} className={clsx(!(mobileWidth || tabletWidth) && 'w-65', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-left pt-2 pb-2')}>
+                                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', (mobileWidth || tabletWidth) && 'body3')} className={clsx(!(mobileWidth || tabletWidth) && 'w-65', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-center pt-2 pb-2')}>
                                     {description}
                                 </Typography> : null
                             }
                             <div className='text-left pt-3 pb-3'>
                                 {props.children}
                             </div>
+                            {description2 ?
+                                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', (mobileWidth || tabletWidth) && 'body3')} className={clsx(!(mobileWidth || tabletWidth) && 'w-65', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-center pt-2 pb-2')}>
+                                    {description2}
+                                </Typography> : null
+                            }
                             {footer ?
                                 <div className='mt-4'>
                                     {footer}

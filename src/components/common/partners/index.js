@@ -7,7 +7,7 @@ const Partners = (props) => {
     <div className="w-100">
       <PartnerTicker >
         {images && images.map((image, i) => {
-          return <PartnerTickerItem icon={image} iconAlt={i} />
+          return <PartnerTickerItem key={i} icon={image} iconAlt={i} />
         })}
       </PartnerTicker>
     </div>

@@ -21,9 +21,5 @@ export const useStyle = makeStyles((theme) => ({
     },
     btnDiv: {
         backgroundColor: theme.palette.secondary.light
-    },
-    imageTag: {
-        border: `1.5px solid ${theme.palette.primary.main}`,
-        borderRadius: '100%'
     }
 }));

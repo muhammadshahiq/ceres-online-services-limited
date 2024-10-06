@@ -82,7 +82,7 @@ export const materialThemeBase = {
       fontStyle: 'normal',
     },
     body1: {
-      fontFamily: 'Lora',
+      fontFamily: 'Outfit',
       fontWeight: 400,
       fontSize: 20,
       lineHeight: '24.2px'
@@ -98,6 +98,12 @@ export const materialThemeBase = {
       fontWeight: 500,
       fontSize: 16,
       lineHeight: '19.36px'
+    },
+    body21300O: {
+      fontFamily: 'Outfit',
+      fontWeight: 300,
+      fontSize: 20,
+      lineHeight: '29.4px'
     },
     body3: {
       fontFamily: 'Outfit',

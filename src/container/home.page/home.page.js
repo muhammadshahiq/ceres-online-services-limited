@@ -1,17 +1,13 @@
 import React, { lazy } from 'react'
 import './home.page.scss';
 import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
-import AppNavbar from '../../components/common/app.navbar/app.navbar';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import clsx from 'clsx';
 import { useStyle } from './home.page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
-import FaqsAndContactSection from '../../components/common/faqs.and.contact.section/faqs.and.contact.section';
-import Partners from '../../components/common/partners/partners';
-import VideoContentSection from '../../components/common/video.content.section/video.content.section';
 import AppButton from '../../components/common/app.button/app.button';
 import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
@@ -233,6 +229,7 @@ const HomePage = () => {
             </div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
+                    waveTheme="2"
                     buttonText="Lets Connect"
                     title='Start’s from experiments till goto Market Strategy'
                     description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '

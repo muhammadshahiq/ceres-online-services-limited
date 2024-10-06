@@ -4,8 +4,8 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { useStyle } from './app.content.box.style';
 import { Typography } from '@mui/material';
 
-const   AppContentBox = (props) => {
-    const { title, description, label, } = props
+const AppContentBox = (props) => {
+    const { title, description, label, description2 } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
@@ -23,6 +23,11 @@ const   AppContentBox = (props) => {
             {description ?
                 <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-3 pb-3')}>
                     {description}
+                </Typography> : null
+            }
+            {description2 ?
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body2', tabletWidth && 'body2', mobileWidth && 'body3')} className={clsx(classes.textStyle, 'text-transform-none text-left pt-3 pb-3')}>
+                    {description2}
                 </Typography> : null
             }
         </div>
