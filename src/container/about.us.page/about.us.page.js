@@ -16,12 +16,17 @@ import Testinomial from '../../components/common/testinomial/testinomial';
 import CircularImageCardV2 from '../../components/common/circular.image.card.v2/circular.image.card.v2';
 import AppLabel from '../../components/common/app.label/app.label';
 import Carousel from '../../components/common/carousel/carousel';
+import { useNavigate } from 'react-router-dom';
 
 const AboutUs = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
+    let navigate = useNavigate();
 
+    const redirectTo = (url) => {
+        navigate(url);
+    };
     const professionalPackagesData = [
         {
             // tag: "",

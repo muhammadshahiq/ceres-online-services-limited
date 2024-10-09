@@ -15,6 +15,7 @@ import AboutUs from './container/about.us.page/about.us.page';
 import BlogsPage from './container/blogs.page/blogs.page';
 import ServicesPage from './container/services.page/services.page';
 import TherapeuticAreasPage from './container/therapeutic.areas.page/therapeutic.areas.page';
+import CareerPage from './container/career.page/career.page';
 // import Loadable from 'react-loadable';
 // const HomePage = Loadable({
 //   loader: () => import(/*webpackChunkName:"UPM "*/'./container/home.page/home.page'),
@@ -46,9 +47,9 @@ function App() {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/about" element={<AboutUs />} />
                   <Route path="/blogs" element={<BlogsPage />} />
-                  <Route path="/career" element={<AboutUs />} />
                   <Route path="/services" element={<ServicesPage />} />
                   <Route path="/therapeutic-areas" element={<TherapeuticAreasPage />} />
+                  <Route path="/career" element={<CareerPage />} />
                   <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />

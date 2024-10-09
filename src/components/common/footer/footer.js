@@ -5,7 +5,8 @@ import { useStyle } from './footer.style'
 import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../../components/common/utill/utils';
 import AppLabelV2 from '../app.label.v2/app.label.v2';
 import { useNavigate } from "react-router-dom";
-    
+import AppContactDrawer from '../app.navbar/drawer.contact';
+
 
 const Footer = (props) => {
     const classes = useStyle()
@@ -17,7 +18,17 @@ const Footer = (props) => {
     const redirect = (url) => {
         navigate(url);
     };
-    
+    const [state, setState] = useState({
+        isContactDrawerOpen: false
+    })
+
+    const showContactDrawer = () => {
+        setState({ ...state, isContactDrawerOpen: true });
+    };
+
+    const hideContactDrawer = () => {
+        setState({ ...state, isContactDrawerOpen: false });
+    };
     return (
         <Paper elevation={0} className={clsx(classes.footer, 'm-auto cursor-pointer')}>
             <Container maxWidth='lg' className='pt-5 pb-5'>
@@ -119,14 +130,17 @@ const Footer = (props) => {
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Info
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/about")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 About us
                             </Typography>
                             <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Works
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={showContactDrawer} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Contacts
+                            </Typography>
+                            <Typography onClick={() => redirect("/career")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                Careers
                             </Typography>
                         </div>
                     </Grid>
@@ -179,6 +193,14 @@ const Footer = (props) => {
                     </Grid>
                 </Grid>
             </Container>
+            {
+                state.isContactDrawerOpen ?
+                    <AppContactDrawer
+                        isContactDrawerOpen={state.isContactDrawerOpen}
+                        showContactDrawer={showContactDrawer}
+                        hideContactDrawer={hideContactDrawer}
+                    /> : null
+            }
         </Paper >
     )
 }

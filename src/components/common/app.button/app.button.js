@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/utils';
 import { useStyle } from './app.button.style';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 const AppButton = (props) => {
@@ -10,6 +11,11 @@ const AppButton = (props) => {
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
+    let navigate = useNavigate();
+
+    const redirectTo = (url) => {
+        navigate(url);
+    };
     return (
         <div>
             <Button variant='contained'

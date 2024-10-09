@@ -39,7 +39,7 @@ const AppNavbar = (props) => {
     const dropdownData = [
         {
             name: 'Therapeutic areas',
-            path: '/therapeutic-areas',
+            // path: '/therapeutic-areas',
             items: {
                 // label: 'Kaichain',
                 // imageSrc: `${process.env.PUBLIC_URL}/assets/images/logo-img-1.png`,
@@ -50,23 +50,23 @@ const AppNavbar = (props) => {
                     },
                     {
                         name: 'Immuno-oncology',
-                        path: '/'
+                        path: '/therapeutic-areas'
                     },
                     {
                         name: 'Infectious diseases',
-                        path: '/'
+                        path: '/therapeutic-areas'
                     },
                     {
                         name: 'Rare diseases',
-                        path: '/'
+                        path: '/therapeutic-areas'
                     },
                     {
                         name: 'Women’s health',
-                        path: '/'
+                        path: '/therapeutic-areas'
                     },
                     {
                         name: 'Vaccines',
-                        path: '/'
+                        path: '/therapeutic-areas'
                     }
                 ]
             }
