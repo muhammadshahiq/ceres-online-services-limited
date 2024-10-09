@@ -1,0 +1,37 @@
+/* Base styles for all dots */
+.slick-dots li button:before {
+    content: '' !important;
+    width: 16px !important;
+    /* Width of the dot */
+    height: 16px !important;
+    /* Height of the dot */
+    background-color: white !important;
+    /* Inactive color */
+    border-radius: 50px !important;
+    /* Custom border radius */
+    border: 1.5px solid black !important;
+    /* Black border for inactive dots */
+    opacity: 1 !important;
+    /* Make sure it's visible */
+    transition: background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Styles for active dot */
+.slick-dots li.slick-active button:before {
+    background-color: #70E000 !important;
+    /* Active color */
+    border: none !important;
+    /* Remove border for active dots */
+}
+
+/* Additional custom styles for the dots container */
+.slick-dots {
+    gap: 0px !important;
+    /* No gap between dots */
+}
+
+/* Adjust the alignment if needed */
+.slick-dots li {
+    margin: 0px !important;
+    /* Remove any margin between dots */
+}

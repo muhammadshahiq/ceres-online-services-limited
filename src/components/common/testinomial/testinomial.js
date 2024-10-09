@@ -51,23 +51,25 @@ const Testinomial = (props) => {
   ]
 
   return (
-    <Slider {...settings} className="d-flex justify-content-center pt-3 pb-3 mt-3 mb-3">
-      {testinomialData && testinomialData.map((data, index) => {
-        return <div key={index} className='w-100 text-center d-flex justify-content-center'>
-          <div className="w-80 position-relative">
-            <div>
-              <AppButton buttonText={data && data.buttonText} buttonTheme="ROUNDED" />
-              <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className="pt-2 pb-2">
-                {data && data.label}
-              </Typography>
-              <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h4', tabletWidth && 'h5', mobileWidth && 'h6')} className="pt-2 pb-2">
-                {data && data.content}
-              </Typography>
+    <div className='pt-5 pb-5 overflow-hidden'>
+      <Slider {...settings} className="d-flex justify-content-center pt-3 pb-3 mt-3 mb-3">
+        {testinomialData && testinomialData.map((data, index) => {
+          return <div key={index} className='w-100 text-center d-flex justify-content-center'>
+            <div className="w-80 position-relative">
+              <div>
+                <AppButton buttonText={data && data.buttonText} buttonTheme="ROUNDED" />
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className="pt-2 pb-2">
+                  {data && data.label}
+                </Typography>
+                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h4', tabletWidth && 'h5', mobileWidth && 'h6')} className="pt-2 pb-2">
+                  {data && data.content}
+                </Typography>
+              </div>
             </div>
           </div>
-        </div>
-      })}
-    </Slider>
+        })}
+      </Slider>
+    </div>
   )
 }
 

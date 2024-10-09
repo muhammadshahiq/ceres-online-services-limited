@@ -14,6 +14,7 @@ import AppContentBox from '../../components/common/app.content.box/app.content.b
 import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
 import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
+import TestinomialV2 from '../../components/common/testinomial.v2/testinomial.v2';
 
 const ServicesPage = () => {
     const tabletWidth = IsTabletWidth()
@@ -226,16 +227,15 @@ const ServicesPage = () => {
                     buttonText='Get Connect With Us'
                 />
             </div>
-            <ServicesPanel />
+            <ServicesPanel backgroundColor="#f7f7f7" />
             {/* Remaining Carousel */}
-            {/* <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
-                <CircularImageCardPanel
-                    justifyContent="center"
-                    title='Our Therapeutic Areas'
-                    description="We have extensive experience across all therapeutic areas, with a particular focus on providing medical writing services for the following:"
-                    cardItems={professionalPackagesData}
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2','overflow-hidden')}>
+                <TestinomialV2
+                    title="What it Includes"
+                    description="At Ceres Online, we are responsible to write complex medical writing including new disease and there hypothesis and theory and communicate with the world to test and cure teh symptoms."
                 />
-            </div> */}
+            </div>
+
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2', 'overflow-hidden')}>
                 <ContentActionBanner
                     buttonText="Why US"
@@ -276,7 +276,7 @@ const ServicesPage = () => {
                 cardItems={teamExpertsData}
                 buttonText="Join Our Team"
             />
-            <div className='pt-3 pb-3'>
+            <div className='pt-3 pb-3 overflow-hidden'>
                 <Testinomial />
             </div>
             <CircularImageCardPanel

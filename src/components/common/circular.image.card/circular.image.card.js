@@ -9,7 +9,7 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { Avatar, Button, Link, Stack } from '@mui/material';
 
 const CircularImageCard = (props) => {
-    const { image, title, description, titleIconSrc, height, label, selected, linkText, avatar, cardFlex, cardBackgroundColor } = props
+    const { image, title, description, titleIconSrc, height, label, selected, linkText, avatar, cardFlex, cardBackgroundColor, minHeight } = props
     const classes = useStyle(props)
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
@@ -34,7 +34,9 @@ const CircularImageCard = (props) => {
                 (!(mobileWidth || tabletWidth) && cardBackgroundColor) && 'pt-0 pb-4 pl-4 pr-4',
                 tabletWidth && 'pl-3 pr-3',
                 mobileWidth && 'pl-3 pr-3',
-                'w-100')}>
+                'w-100')}
+                sx={{ minHeight: minHeight ? minHeight : '150px' }}
+            >
                 {avatar ?
                     <Stack direction="row" spacing={2} className='pb-2'>
                         <Avatar

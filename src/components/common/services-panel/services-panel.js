@@ -6,13 +6,15 @@ import AppBannerPanel from '../app.banner.panel/app.banner.panel';
 import AppContentBox from '../app.content.box/app.content.box';
 import CircularImageCard from '../circular.image.card/circular.image.card';
 
-const ServicesPanel = () => {
+const ServicesPanel = (props) => {
+    const { backgroundColor = "" } = props
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     // const classes = useStyle();
     return (
         <div>
             <AppBannerPanel
+                backgroundColor={backgroundColor}
                 maxWidth="lg"
                 // classNames="pl-0 pr-0"
                 leftSideContent={<div className='pl-5 pr-5'><AppContentBox

@@ -23,7 +23,7 @@ const HomePage = () => {
     const professionalPackagesData = [
         {
             // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/Chat_Icon_UIA.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Gene therapy",
@@ -41,7 +41,7 @@ const HomePage = () => {
         },
         {
             // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/infection.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Infectious diseases",
@@ -50,7 +50,7 @@ const HomePage = () => {
         },
         {
             // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/disease.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Rare diseases",
@@ -59,7 +59,7 @@ const HomePage = () => {
         },
         {
             // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/women-health.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Women’s health",
@@ -68,7 +68,7 @@ const HomePage = () => {
         },
         {
             // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/vaccine.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Vaccines",

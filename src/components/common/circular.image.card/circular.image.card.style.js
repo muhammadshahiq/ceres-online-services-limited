@@ -1,11 +1,11 @@
 import { makeStyles } from "@mui/styles";
-export const useStyle = makeStyles((theme) => ({
+export const useStyle = makeStyles((theme, props) => ({
     cardBackgroundColor: {
         backgroundColor: '#f7f7f7',
         borderRadius: '24px',
         cursor: 'pointer',
         border: '0px',
-        boxShadow:'none',
+        boxShadow: 'none',
         // border: '0px'
         "&:hover": {
             backgroundColor: theme.palette.ternary.main,
@@ -32,7 +32,7 @@ export const useStyle = makeStyles((theme) => ({
     cardContent: {
         // backgroundColor: theme.palette.background.paper,
         // border: `1.5px solid ${theme.palette.primary.main}`,
-        minHeight: '150px',
+        // minHeight: '150px',
         boxShadow: 'none',
         // "&:hover": {
         //     backgroundColor: theme.palette.ternary.main,
@@ -41,7 +41,7 @@ export const useStyle = makeStyles((theme) => ({
     selectedCardContent: {
         // backgroundColor: theme.palette.ternary.main,
         // border: `1.5px solid ${theme.palette.primary.main}`,
-        minHeight: '150px',
+        // minHeight: '150px',
         boxShadow: 'none'
     },
     cardMedia: {
