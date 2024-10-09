@@ -89,13 +89,13 @@ const Footer = (props) => {
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Services
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Medical
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Communication
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Regulatory Writing
                             </Typography>
                         </div>
@@ -106,22 +106,22 @@ const Footer = (props) => {
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Therapeutic Areas
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Gene therapy
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Immuno-oncology
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Infectious diseases
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Rare diseases
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Women’s health
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/therapeutic-areas")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Vaccines
                             </Typography>
                         </div>
