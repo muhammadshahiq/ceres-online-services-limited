@@ -93,11 +93,11 @@ const AppDrawer = (props) => {
                             </Button>
                         </Link>
                         <Link to="About us" spy={true} smooth={true} offset={50} duration={500} delay={500}>
-                            <Button onClick={() => redirect('/')} variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
+                            <Button onClick={() => redirect('/about')} variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 About us
                             </Button>
                         </Link>
-                        <Link to="Services" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                        <Link to="Services" onClick={() => redirect('/services')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                             <Button variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 Services
                             </Button>
@@ -114,7 +114,7 @@ const AppDrawer = (props) => {
                                 </div>
                             })}
                         </div>
-                        <Link to="Blog" onClick={() => redirect('/')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                        <Link to="Blog" onClick={() => redirect('/blog')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                             <Button variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 Blog
                             </Button>

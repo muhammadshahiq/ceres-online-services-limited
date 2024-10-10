@@ -89,13 +89,13 @@ const Footer = (props) => {
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Services
                             </Typography>
-                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/services")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Medical
                             </Typography>
-                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/services")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Communication
                             </Typography>
-                            <Typography onClick={() => redirect("/service")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                            <Typography onClick={() => redirect("/services")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Regulatory Writing
                             </Typography>
                         </div>
