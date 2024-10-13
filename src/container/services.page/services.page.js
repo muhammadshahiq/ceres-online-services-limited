@@ -217,7 +217,7 @@ const ServicesPage = () => {
         }
     ]
     return (
-        <div>
+        <div id='Services'>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
                     image={`${process.env.PUBLIC_URL}/assets/images/service-page-banner.svg`}
@@ -225,11 +225,12 @@ const ServicesPage = () => {
                     label='On various medical domains'
                     description="We are a passionate team of medical writers committed to delivering accurate, engaging, and accessible healthcare information, backed by our expertise in scientific research and medical communications."
                     buttonText='Get Connect With Us'
+                    redirect='/medical-writing-gene-theraphy'
                 />
             </div>
             <ServicesPanel backgroundColor="#f7f7f7" />
             {/* Remaining Carousel */}
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2','overflow-hidden')}>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2', 'overflow-hidden')}>
                 <TestinomialV2
                     title="What it Includes"
                     description="At Ceres Online, we are responsible to write complex medical writing including new disease and there hypothesis and theory and communicate with the world to test and cure teh symptoms."

@@ -93,7 +93,8 @@ export const useStyle = makeStyles((theme, props) => ({
         fontWeight: 500,
         textDecoration: 'underline',
         "&:hover": {
-            fontWeight: 600
+            fontWeight: 600,
+            color: theme.palette.primary.main
         }
     }
 }));

@@ -216,7 +216,7 @@ const HomePage = () => {
         }
     ]
     return (
-        <div>
+        <div id='Home'>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
                     image={`${process.env.PUBLIC_URL}/assets/images/men-banner-1.svg`}
@@ -224,6 +224,8 @@ const HomePage = () => {
                     label='projects to life on a global scale.'
                     description="We provide precise medical writing and regulatory documentation, delivered on time, with clear messaging, and within budget."
                     buttonText='What we offers'
+                    redirect="/services"
+                    id='services'
                     tickerImages={tickerImages}
                 />
             </div>
@@ -237,7 +239,7 @@ const HomePage = () => {
                 />
             </div>
             <ServicesPanel />
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div id='gene-theraphy' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <CircularImageCardPanel
                     justifyContent="center"
                     title='Our Therapeutic Areas'

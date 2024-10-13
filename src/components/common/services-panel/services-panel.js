@@ -34,6 +34,7 @@ const ServicesPanel = (props) => {
                                 title="Regulatory Writing"
                                 description="With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. "
                                 linkText="Learn More"
+                                redirectTo='/medical-writing-gene-theraphy'
                             // selected={true}
                             />
                         </div>
@@ -45,6 +46,7 @@ const ServicesPanel = (props) => {
                             title="Medical Communications"
                             description="We combine science with creativity to provide a wide range of medical communication services as part of a broader scientific communication, marketing, and commercial strategy involving multiple stakeholders to ensure your product is at the heart of everything we do."
                             linkText="Learn More"
+                            redirectTo='/medical-writing-gene-theraphy'
                         // selected={true}
                         />
                     </Grid>

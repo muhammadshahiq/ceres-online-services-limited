@@ -107,8 +107,8 @@ const AppNavbar = (props) => {
         <div className="position-relative">
             {!mobileWidth && !tabletWidth ? (
                 <AppBar
-                    position="relative"
-                    className={clsx(classes.appNavbar, 'm-auto position-relative')}
+                    position="fixed"
+                    className={clsx(classes.appNavbar, 'm-auto')}
                 >
                     <Container maxWidth="xl" className=''>
                         <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-2 pb-2")}>
@@ -145,7 +145,7 @@ const AppNavbar = (props) => {
                                             Services
                                         </Button>
                                     </Link>
-                                    <div>
+                                    <Link to='gene-theraphy'>
                                         {dropdownData && dropdownData.map((data, index) => {
                                             return <div key={index}>
                                                 <DropDownMenu
@@ -157,8 +157,8 @@ const AppNavbar = (props) => {
                                                 />
                                             </div>
                                         })}
-                                    </div>
-                                    <Link to="Blog" onClick={() => redirect('/blogs')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                    </Link>
+                                    <Link to="blogs" onClick={() => redirect('/blogs')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                                         <Button variant="none" className={clsx(classes.textStyle, "text-transform-none ml-2")}>
                                             Blog
                                         </Button>
@@ -196,7 +196,7 @@ const AppNavbar = (props) => {
                     </Container>
                 </AppBar>
             )}
-
+            <div className={clsx(classes.appBarSpacer)} />
             {
                 state.isContactDrawerOpen ?
                     <AppContactDrawer

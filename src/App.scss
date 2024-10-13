@@ -59,7 +59,7 @@
   bottom: 0;
 }
 
-.bottom-10 {  
+.bottom-10 {
   bottom: 10px;
 }
 
@@ -271,12 +271,22 @@
   opacity: 0.1;
 }
 
+.opacity-3 {
+  opacity: 0.3;
+}
+
 .opacity-4 {
   opacity: 0.4;
 }
 
 .visibility-hidden {
   visibility: hidden
+}
+
+.sticky {
+  position: sticky;
+  //background-color: #fcfcfc;
+  z-index: 999;
 }
 
 .z-index {

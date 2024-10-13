@@ -9,7 +9,7 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { Avatar, Button, Link, Stack } from '@mui/material';
 
 const CircularImageCard = (props) => {
-    const { image, title, description, titleIconSrc, height, label, selected, linkText, avatar, cardFlex, cardBackgroundColor, minHeight } = props
+    const { image, title, description, titleIconSrc, height, label, selected, linkText, avatar, cardFlex, cardBackgroundColor, minHeight, redirectTo } = props
     const classes = useStyle(props)
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
@@ -71,7 +71,7 @@ const CircularImageCard = (props) => {
                 }
 
                 {linkText ?
-                    <Link className={clsx('pt-2 d-flex align-items-center')}>
+                    <Link href={redirectTo ? redirectTo : '/'} className={clsx(classes.linkStyle, 'pt-2 d-flex align-items-center')}>
                         <Typography variant={clsx(!(mobileWidth || tabletWidth) && "body2", (mobileWidth || tabletWidth) && 'body2')}
                             className={clsx(classes.linkStyle)}>
                             {linkText}

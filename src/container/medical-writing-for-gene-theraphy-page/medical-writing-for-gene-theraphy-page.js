@@ -1,12 +1,12 @@
 import React, { lazy } from 'react'
-import './therapeutic.areas.page.scss';
+import './medical-writing-for-gene-theraphy-page.scss';
 import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import clsx from 'clsx';
-import { useStyle } from './therapeutic.areas.page.style';
+import { useStyle } from './medical-writing-for-gene-theraphy-page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
 import AppButton from '../../components/common/app.button/app.button';
 import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
@@ -15,7 +15,7 @@ import CircularImageCard from '../../components/common/circular.image.card/circu
 import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
 
-const TherapeuticAreasPage = () => {
+const MedicalWritingForGeneTheraphyPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
@@ -26,27 +26,39 @@ const TherapeuticAreasPage = () => {
             titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/Chat_Icon_UIA.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Gene therapy",
+            title: "Fabry disease",
             description: "Gene therapy is a groundbreaking field, aiming to address the root genetic causes of diseases. We're committed to developing innovative therapies that can correct or modify faulty genes, offering life-changing solutions and new hope to patients who previously had limited treatment options.",
-            linkText: "Learn More",
+            gridSizes: [{
+                sm: 12,
+                md: 6,
+                lg: 6
+            }]
         },
         {
             tag: "",
             titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/message-icon.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Immuno-oncology",
+            title: "Gaucher disease",
             description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
+            gridSizes: [{
+                sm: 12,
+                md: 6,
+                lg: 6
+            }]
         },
         {
             // tag: "",
             titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/infection.svg`,
             // avatar: ``,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Infectious diseases",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
+            title: "Haemophilia",
+            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation.",
+            gridSizes: [{
+                sm: 12,
+                md: 6,
+                lg: 6
+            }]
         },
         {
             // tag: "",
@@ -55,112 +67,16 @@ const TherapeuticAreasPage = () => {
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Rare diseases",
             description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/women-health.svg`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Women’s health",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/vaccine.svg`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Vaccines",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
+            gridSizes: [{
+                sm: 12,
+                md: 6,
+                lg: 6
+            }]
         }
     ]
 
 
     const tickerImages = [`${process.env.PUBLIC_URL}/assets/images/ticker-1.svg`, `${process.env.PUBLIC_URL}/assets/images/ticker-2.svg`]
-
-    const workingWithUsContent = [
-        {
-            title: "Deliver",
-            description: "We constantly deliver error-free medical writing and regulatory documentation on time, on message, and on budget.",
-        },
-        {
-            title: "Experts",
-            description: "We use our experience and expertise to produce high-quality documentation for use across all stages of the clinical development lifecycle.",
-        },
-        {
-            title: "Partnership",
-            description: "We work in partnership with our clients to support the diffusion of therapeutic innovation to help transform lives globally.",
-        },
-        {
-            title: "Trusted",
-            description: "We are trusted by our life science and pharmaceutical partners to deliver on their medical writing objectives.",
-        }
-    ]
-
-    const teamExpertsData = [
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        }
-    ]
 
     const blogsContent = [
         {
@@ -219,21 +135,57 @@ const TherapeuticAreasPage = () => {
         <div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
-                    className='pr-5'
-                    image={`${process.env.PUBLIC_URL}/assets/images/therapeutic-areas.svg`}
-                    title='Treatment Domains'
-                    label='Our breadth of experience spans all therapeutic areas'
-                    description="However, we take a special interest in providing medical writing for the following:"
+                    image={`${process.env.PUBLIC_URL}/assets/images/medical-writing-banner.svg`}
+                    title='Medical writing for gene therapy'
+                    label='Take your gene therapy research to the next level'
+                    description="Take your gene therapy research to the next level with ceres online superior medical writing services. We guarantee accuracy, reliability, and straightforwardness to make sure your work stands out!"
                     buttonText='What we offers'
                     tickerImages={tickerImages}
                 />
             </div>
-            <div id='gene-theraphy' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
-                <CircularImageCardPanel
-                    justifyContent="center"
-                    title='Our Therapeutic Areas'
-                    description="We have extensive experience across all therapeutic areas, with a particular focus on providing medical writing services for the following:"
-                    cardItems={professionalPackagesData}
+            <div className='pt-5 pb-5'>
+                <Container maxWidth='lg'>
+                    <AppContentBox
+                        textAlign='center'
+                        title='Why do we specialise in gene therapy?'
+                        label='Gene therapy is arguably one of the most exciting areas of medical research that will hopefully widen the treatment options available to patients globally.'
+                        description="Importantly, gene therapy has a vast amount of health-based potential, leading to the development of novel therapies for rare diseases, which are often overlooked in research and development terms. Equally, gene therapy holds the promise to create new treatments for more prevalent conditions, such as cardiovascular disease, cancer, diabetes, and haemophilia."
+                        variantDescription='body2'
+                        description2="At Ceres Online, we are passionate about advancing medical research and driving therapeutic change to improve the health outcomes of individuals and populations by focusing our attention on groundbreaking scientific developments, like gene therapy. Our wide-ranging knowledge and expertise can help you communicate your research in a meaningful way, ensuring your data is shared with the wider scientific community accurately, effectively, and ethically."
+                    />
+                </Container>
+            </div>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <Grid container>
+                    <Grid item xs={12} sm={12} md={9} lg={9}>
+                        <CircularImageCardPanel
+                            title='Gene therapy areas we explore'
+                            description="We have a specific interest in the following diseases that can be treated by gene therapy:"
+                            cardItems={professionalPackagesData}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-5', 'w-100 h-100 d-flex justify-content-center align-items-center')}>
+                        <div>
+                            <Typography
+                                className={clsx(classes.textStyle, !(mobileWidth || tabletWidth) && 'pt-5 mt-5')}>
+                                Additionally, we have a keen interest in the development of new gene therapies for more common health issues like diabetes, cancer, and cardiovascular disease. However, our interests are far-reaching, and our expertise is continually growing, meaning that the list doesn’t stop there!
+                            </Typography>
+                            <div className='pt-4'>
+                                <AppButton buttonText='What we offers' />
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+
+            </div>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <ContentActionBanner
+                    waveTheme="2"
+                    maxWidth='lg'
+                    buttonText="Lets Connect"
+                    title='The future of gene therapy'
+                    description='In the future, it is predicted that gene therapy will become increasingly more widespread for use by healthcare professionals should current levels of economic investment, research, and development remain constant. The future of gene therapy is tremendously exciting as it could liberate patients from the need to receive ongoing treatments for their respective health conditions which will improve quality of life and levels of individual well-being. It is now time to realise the great potential of gene therapy and look forward to the future of novel gene-based therapies for both prevalent and rare diseases alike.'
+                    footer={<AppButton buttonText="Get in Touch" />}
                 />
             </div>
             <div className='pt-3 pb-3'>
@@ -252,4 +204,4 @@ const TherapeuticAreasPage = () => {
         </div>
     )
 }
-export default TherapeuticAreasPage
+export default MedicalWritingForGeneTheraphyPage

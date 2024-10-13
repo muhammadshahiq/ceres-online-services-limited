@@ -102,10 +102,11 @@ const AppDrawer = (props) => {
                                 Services
                             </Button>
                         </Link>
-                        <div>
+                        <div to='gene-theraphy'>
                             {dropdownData && dropdownData.map((data, index) => {
                                 return <div key={index}>
                                     <DropDownMenu
+                                        path={data.path}
                                         name={data.name}
                                         label={data.items && data.items.label}
                                         imageSrc={data.items && data.items.imageSrc}
@@ -114,7 +115,7 @@ const AppDrawer = (props) => {
                                 </div>
                             })}
                         </div>
-                        <Link to="Blog" onClick={() => redirect('/blog')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                        <Link to="blogs" onClick={() => redirect('/blog')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                             <Button variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 Blog
                             </Button>

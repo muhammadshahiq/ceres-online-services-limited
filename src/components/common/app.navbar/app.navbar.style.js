@@ -15,6 +15,7 @@ export const useStyle = makeStyles(theme => ({
         boxShadow: 'none !important',
         zIndex: 1000
     },
+    appBarSpacer: theme.mixins.toolbar,
     toolbar: {
         padding: "0px"
     },
@@ -107,7 +108,7 @@ export const useStyle = makeStyles(theme => ({
     textStyle: {
         color: theme.palette.primary.main
     },
-  
+
     contactDrawerPaper: {
         background: theme.palette.background.paper,
         // marginTop: '60px',
