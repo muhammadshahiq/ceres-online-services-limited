@@ -7,7 +7,7 @@ import CircularImageCard from '../../../components/common/circular.image.card/ci
 import AppButton from '../app.button/app.button';
 
 const CircularImageCardPanel = (props) => {
-    const { title, description, buttonText, justifyContent, cardItems = [], topHeaderImage, maxWidth, classNames, showTag } = props
+    const { title, description, buttonText, justifyContent, cardItems = [], topHeaderImage, maxWidth, classNames, showTag, redirect } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
@@ -102,7 +102,7 @@ const CircularImageCardPanel = (props) => {
                     </ Grid>
                 </div>
                 {buttonText ? <div className={clsx("pt-5 text-center")}>
-                    <AppButton buttonText={buttonText} />
+                    <AppButton buttonText={buttonText} redirect={redirect} />
                 </div> : null}
             </Container>
         </div >

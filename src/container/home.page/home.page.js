@@ -1,6 +1,6 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import './home.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
@@ -19,7 +19,9 @@ const HomePage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
-
+    useEffect(() => {
+        scrollToTop()
+    }, [])
     const professionalPackagesData = [
         {
             // tag: "",
@@ -285,15 +287,18 @@ const HomePage = () => {
                     </Container>
                 </ContentActionBanner>
             </div>
-            <CircularImageCardPanel
-                // classNames="pl-5 pr-5"
-                maxWidth='lg'
-                title='Meet Our Team of Experts'
-                description="From discovery to delivery, we craft the science that changes lives."
-                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
-                cardItems={teamExpertsData}
-                buttonText="Join Our Team"
-            />
+            <div id='team'>
+                <CircularImageCardPanel
+                    // classNames="pl-5 pr-5"
+                    maxWidth='lg'
+                    title='Meet Our Team of Experts'
+                    description="From discovery to delivery, we craft the science that changes lives."
+                    topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                    cardItems={teamExpertsData}
+                    buttonText="Join Our Team"
+                    redirect="/career"
+                />
+            </div>
             <div className='pt-3 pb-3'>
                 <Testinomial />
             </div>
@@ -306,6 +311,7 @@ const HomePage = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
         </div>
     )

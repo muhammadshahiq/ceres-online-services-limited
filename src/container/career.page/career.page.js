@@ -1,6 +1,6 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import './career.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
 import clsx from 'clsx';
@@ -10,7 +10,9 @@ const CareerPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
-
+    useEffect(() => {
+        scrollToTop()
+    }, [])
     const ourlatestVacancies = [
         {
             // tag: "",
@@ -84,7 +86,7 @@ const CareerPage = () => {
                     tickerImages={tickerImages}
                 />
             </div>
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div id='team' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <CircularImageCardPanel
                     justifyContent="center"
                     title='Vacancies Title'

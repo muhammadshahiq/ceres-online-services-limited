@@ -11,7 +11,7 @@ const ContentActionBanner = (props) => {
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     return (
-        <Container maxWidth={clsx(!mobileWidth && 'xl', mobileWidth && 'xl')}>
+        <Container maxWidth={clsx(!mobileWidth && 'xl', mobileWidth && 'xl')} className={clsx((mobileWidth || tabletWidth) && 'pl-0 pr-0')}>
             <Box className={clsx(hideBackgroundColor ? '' : classes.contentBannerStyle, 'pt-3 pb-3 position-relative overflow-hidden')}>
                 {waveTheme == "1" ?
                     <>
@@ -65,7 +65,7 @@ const ContentActionBanner = (props) => {
                         </> :
                         null
                 }
-                <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'md' : mobileWidth ? 'sm' : 'md')} className='pt-5 pb-5 z-index position-relative'>
+                <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'md' : mobileWidth ? 'sm' : 'md')} className={clsx((mobileWidth || tabletWidth) && 'pl-0 pr-0', 'pt-5 pb-5 z-index position-relative')}>
                     <div className={clsx(!mobileWidth && 'pt-5 pb-5', mobileWidth && 'w-100 pl-2 pr-2',
                         'd-flex flex-row justify-content-center align-items-center m-auto h-100')}>
                         <div className='w-100 m-auto text-center d-flex flex-column justify-content-center align-items-center pl-3 pr-3'>

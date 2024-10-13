@@ -15,8 +15,8 @@ const TestinomialV2 = (props) => {
   var settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: !(mobileWidth || tabletWidth) ? 3 : tabletWidth ? 2 : mobileWidth ? 1 : 3,
+    slidesToScroll: !(mobileWidth || tabletWidth) ? 3 : tabletWidth ? 2 : mobileWidth ? 1 : 3,
     autoplay: true,
     speed: 10000,
     autoplaySpeed: 10000,

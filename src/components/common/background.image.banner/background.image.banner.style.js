@@ -8,12 +8,12 @@ export const useStyle = makeStyles((theme) => ({
     },
     headerOnTablet: {
         // background: theme.palette.gradientColor3.main,
-        height: '600px',
+        height: '500px',
         borderRadius: '0px',
     },
     responsiveHeader: {
         // background: theme.palette.gradientColor3.main,
-        height: '520px',
+        height: '450px',
         borderRadius: '0px',
     },
     textStyle: {

@@ -1,6 +1,6 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import './medical-writing-for-gene-theraphy-page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
@@ -9,16 +9,16 @@ import clsx from 'clsx';
 import { useStyle } from './medical-writing-for-gene-theraphy-page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
 import AppButton from '../../components/common/app.button/app.button';
-import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
-import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
-import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
 
 const MedicalWritingForGeneTheraphyPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
+    useEffect(() => {
+        scrollToTop()
+    }, [])
 
     const professionalPackagesData = [
         {
@@ -141,6 +141,7 @@ const MedicalWritingForGeneTheraphyPage = () => {
                     description="Take your gene therapy research to the next level with ceres online superior medical writing services. We guarantee accuracy, reliability, and straightforwardness to make sure your work stands out!"
                     buttonText='What we offers'
                     tickerImages={tickerImages}
+                    scrollID='gene-theraphy'
                 />
             </div>
             <div className='pt-5 pb-5'>
@@ -155,7 +156,7 @@ const MedicalWritingForGeneTheraphyPage = () => {
                     />
                 </Container>
             </div>
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div id='gene-theraphy' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <Grid container>
                     <Grid item xs={12} sm={12} md={9} lg={9}>
                         <CircularImageCardPanel
@@ -164,14 +165,14 @@ const MedicalWritingForGeneTheraphyPage = () => {
                             cardItems={professionalPackagesData}
                         />
                     </Grid>
-                    <Grid item xs={12} sm={12} md={3} lg={3} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-5', 'w-100 h-100 d-flex justify-content-center align-items-center')}>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-5', (mobileWidth || tabletWidth) && 'pl-4 pr-4 pt-4 pb-4', 'w-100 h-100 d-flex justify-content-center align-items-center')}>
                         <div>
                             <Typography
                                 className={clsx(classes.textStyle, !(mobileWidth || tabletWidth) && 'pt-5 mt-5')}>
                                 Additionally, we have a keen interest in the development of new gene therapies for more common health issues like diabetes, cancer, and cardiovascular disease. However, our interests are far-reaching, and our expertise is continually growing, meaning that the list doesn’t stop there!
                             </Typography>
                             <div className='pt-4'>
-                                <AppButton buttonText='What we offers' />
+                                <AppButton buttonText='What we offers' redirect="/services" />
                             </div>
                         </div>
                     </Grid>
@@ -200,6 +201,7 @@ const MedicalWritingForGeneTheraphyPage = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
         </div>
     )

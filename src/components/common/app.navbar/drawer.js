@@ -115,7 +115,7 @@ const AppDrawer = (props) => {
                                 </div>
                             })}
                         </div>
-                        <Link to="blogs" onClick={() => redirect('/blog')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                        <Link to="blogs" onClick={() => redirect('/blogs')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                             <Button variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 Blog
                             </Button>

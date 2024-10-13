@@ -4,10 +4,11 @@ import { IsMobileWidth, IsTabletWidth } from '../../../components/common/utill/u
 import { useStyle } from './app.button.style';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 
 const AppButton = (props) => {
-    const { buttonText, buttonTheme, redirect } = props
+    const { buttonText, buttonTheme, redirect, scrollID } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
@@ -18,11 +19,19 @@ const AppButton = (props) => {
     };
     return (
         <div>
-            <Button variant='contained'
-                onClick={redirect ? () => redirectTo(redirect) : props.onClick}
-                className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', mobileWidth && 'pl-3 pr-3', 'text-transform-none', buttonTheme == "ROUNDED" ? classes.btnStyle2 : classes.btnStyle)}>
-                {buttonText}
-            </Button>
+            {!scrollID ?
+                <Button variant='contained'
+                    onClick={redirect ? () => redirectTo(redirect) : props.onClick}
+                    className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', mobileWidth && 'pl-3 pr-3', 'text-transform-none', buttonTheme == "ROUNDED" ? classes.btnStyle2 : classes.btnStyle)}>
+                    {buttonText}
+                </Button> :
+                <Button variant='contained'
+                    onClick={redirect ? () => redirectTo(redirect) : props.onClick}
+                    className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', mobileWidth && 'pl-3 pr-3', 'text-transform-none', buttonTheme == "ROUNDED" ? classes.btnStyle2 : classes.btnStyle)}>
+                    <Link to={scrollID} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                        {buttonText}
+                    </Link>
+                </Button>}
         </div>
     )
 }

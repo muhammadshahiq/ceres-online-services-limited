@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './about.us.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
 import { Container, Grid } from '@mui/material';
@@ -11,9 +11,7 @@ import AppButton from '../../components/common/app.button/app.button';
 import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
 import AppContentBox from '../../components/common/app.content.box/app.content.box';
 import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
-import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
-import CircularImageCardV2 from '../../components/common/circular.image.card.v2/circular.image.card.v2';
 import AppLabel from '../../components/common/app.label/app.label';
 import Carousel from '../../components/common/carousel/carousel';
 import { useNavigate } from 'react-router-dom';
@@ -27,65 +25,10 @@ const AboutUs = () => {
     const redirectTo = (url) => {
         navigate(url);
     };
-    const professionalPackagesData = [
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Gene therapy",
-            description: "Gene therapy is a groundbreaking field, aiming to address the root genetic causes of diseases. We're committed to developing innovative therapies that can correct or modify faulty genes, offering life-changing solutions and new hope to patients who previously had limited treatment options.",
-            linkText: "Learn More",
-        },
-        {
-            tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/message-icon.svg`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Immuno-oncology",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Infectious diseases",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Rare diseases",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Women’s health",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Vaccines",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        }
-    ]
 
-
-    const tickerImages = [`${process.env.PUBLIC_URL}/assets/images/ticker-1.svg`, `${process.env.PUBLIC_URL}/assets/images/ticker-2.svg`]
+    useEffect(() => {
+        scrollToTop()
+    }, [])
 
     const workingWithUsContent = [
         {
@@ -287,14 +230,14 @@ const AboutUs = () => {
             </div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
-                    maxWidth="lg"
+                    maxWidth={mobileWidth ? 'xl' : "lg"}
                     buttonText="Our Mission"
                     title='From molecule to market, we write the science that transforms lives.'
                     description2='We support our industry partners in driving therapeutic innovation by providing world-class medical writing and regulatory documentation, from molecule to market.'
                     footer={<AppButton buttonText="Get Connect With Us" />}
                 >
-                    <Container maxWidth='xl' className={clsx(!(mobileWidth || tabletWidth) && 'pl-2 pr-2', 'pt-3 pb-3')}>
-                        <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-2')}>
+                    <Container maxWidth='xl' className={clsx(!(mobileWidth || tabletWidth) && 'pl-2 pr-2', (mobileWidth || tabletWidth) && 'pl-0 pr-0', 'pt-3 pb-3')}>
+                        <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', (mobileWidth || tabletWidth) && 'mt-2 pl-0 pr-0')}>
                             {workingWithUsContent && workingWithUsContent.map((data, index) => {
                                 return <Grid key={index} item xs={12} sm={6} md={6} lg={6}>
                                     <CircularImageCard
@@ -334,13 +277,13 @@ const AboutUs = () => {
             />
             <CircularImageCardPanel
                 maxWidth='lg'
-                showTag
+                showTag={mobileWidth ? false : true}
                 justifyContent="center"
                 title='Our Core Focus'
                 description="At Ceres Online, we prioritize compliance, ensuring our team receives regular training to follow all relevant industry codes and regulations."
                 cardItems={policiesContent}
             />
-            <div>
+            <div id='team'>
                 <CircularImageCardPanel
                     maxWidth='lg'
                     title='Meet Our Team of Experts'
@@ -348,6 +291,7 @@ const AboutUs = () => {
                     topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                     cardItems={teamExpertsData}
                     buttonText="Join Our Team"
+                    redirect="/career"
                 />
             </div>
             <div id='testinomial' className='pt-3 pb-3'>
@@ -361,6 +305,7 @@ const AboutUs = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
         </div>
     )

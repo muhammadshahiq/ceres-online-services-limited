@@ -1,6 +1,6 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import './services.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
@@ -9,8 +9,6 @@ import clsx from 'clsx';
 import { useStyle } from './services.page.style';
 import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
 import AppButton from '../../components/common/app.button/app.button';
-import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
-import AppContentBox from '../../components/common/app.content.box/app.content.box';
 import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
 import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
@@ -20,67 +18,9 @@ const ServicesPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
-
-    const professionalPackagesData = [
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Gene therapy",
-            description: "Gene therapy is a groundbreaking field, aiming to address the root genetic causes of diseases. We're committed to developing innovative therapies that can correct or modify faulty genes, offering life-changing solutions and new hope to patients who previously had limited treatment options.",
-            linkText: "Learn More",
-        },
-        {
-            tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/message-icon.svg`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Immuno-oncology",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Infectious diseases",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Rare diseases",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Women’s health",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // avatar: ``,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Vaccines",
-            description: "With our experience, knowledge, and talent, we can take care of the entire regulatory medical writing and submission process. Through full compliance with regulatory industry standards and processes, we can help you deliver exceptional documents and secure marketing authorisation. ",
-            linkText: "Learn More",
-        }
-    ]
-
-
-    const tickerImages = [`${process.env.PUBLIC_URL}/assets/images/ticker-1.svg`, `${process.env.PUBLIC_URL}/assets/images/ticker-2.svg`]
-
+    useEffect(() => {
+        scrollToTop()
+    }, [])
     const workingWithUsContent = [
         {
             title: "Deliver",
@@ -245,8 +185,8 @@ const ServicesPage = () => {
                     description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
                     footer={<AppButton buttonText="Get in Touch" />}
                 >
-                    <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5')}>
-                        <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-2')}>
+                    <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5', (mobileWidth || tabletWidth) && 'pl-0 pr-0')}>
+                        <Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', (mobileWidth || tabletWidth) && 'mt-2 pl-0 pr-0')}>
                             {workingWithUsContent && workingWithUsContent.map((data, index) => {
                                 return <Grid key={index} item xs={12} sm={6} md={6} lg={6} className=''>
                                     <CircularImageCard
@@ -268,15 +208,18 @@ const ServicesPage = () => {
                     footer={<AppButton buttonText="Get in Touch" />}
                 />
             </div>
-            <CircularImageCardPanel
-                // classNames="pl-5 pr-5"
-                maxWidth='lg'
-                title='Meet Our Team of Experts'
-                description="From discovery to delivery, we craft the science that changes lives."
-                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
-                cardItems={teamExpertsData}
-                buttonText="Join Our Team"
-            />
+            <div id='team'>
+                <CircularImageCardPanel
+                    // classNames="pl-5 pr-5"
+                    maxWidth='lg'
+                    title='Meet Our Team of Experts'
+                    description="From discovery to delivery, we craft the science that changes lives."
+                    topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                    cardItems={teamExpertsData}
+                    buttonText="Join Our Team"
+                    redirect="/career"
+                />
+            </div>
             <div className='pt-3 pb-3 overflow-hidden'>
                 <Testinomial />
             </div>
@@ -289,6 +232,7 @@ const ServicesPage = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
         </div>
     )

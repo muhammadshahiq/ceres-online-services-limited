@@ -71,7 +71,7 @@ const CircularImageCard = (props) => {
                 }
 
                 {linkText ?
-                    <Link href={redirectTo ? redirectTo : '/'} className={clsx(classes.linkStyle, 'pt-2 d-flex align-items-center')}>
+                    <Link href={redirectTo} className={clsx(classes.linkStyle, 'pt-2 d-flex align-items-center')}>
                         <Typography variant={clsx(!(mobileWidth || tabletWidth) && "body2", (mobileWidth || tabletWidth) && 'body2')}
                             className={clsx(classes.linkStyle)}>
                             {linkText}

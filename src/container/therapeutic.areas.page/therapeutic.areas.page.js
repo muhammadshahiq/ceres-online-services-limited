@@ -1,25 +1,20 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import './therapeutic.areas.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import Carousel from '../../components/common/carousel/carousel';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import BackgroundImageBanner from '../../components/common/background.image.banner/background.image.banner';
-import { Container, Grid } from '@mui/material';
 import clsx from 'clsx';
 import { useStyle } from './therapeutic.areas.page.style';
-import ContentActionBanner from '../../components/common/content.action.banner/content.action.banner';
-import AppButton from '../../components/common/app.button/app.button';
-import AppBannerPanel from '../../components/common/app.banner.panel/app.banner.panel';
-import AppContentBox from '../../components/common/app.content.box/app.content.box';
-import CircularImageCard from '../../components/common/circular.image.card/circular.image.card';
-import ServicesPanel from '../../components/common/services-panel/services-panel';
 import Testinomial from '../../components/common/testinomial/testinomial';
 
 const TherapeuticAreasPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
-
+    useEffect(() => {
+        scrollToTop()
+    }, [])
     const professionalPackagesData = [
         {
             // tag: "",
@@ -79,88 +74,6 @@ const TherapeuticAreasPage = () => {
 
 
     const tickerImages = [`${process.env.PUBLIC_URL}/assets/images/ticker-1.svg`, `${process.env.PUBLIC_URL}/assets/images/ticker-2.svg`]
-
-    const workingWithUsContent = [
-        {
-            title: "Deliver",
-            description: "We constantly deliver error-free medical writing and regulatory documentation on time, on message, and on budget.",
-        },
-        {
-            title: "Experts",
-            description: "We use our experience and expertise to produce high-quality documentation for use across all stages of the clinical development lifecycle.",
-        },
-        {
-            title: "Partnership",
-            description: "We work in partnership with our clients to support the diffusion of therapeutic innovation to help transform lives globally.",
-        },
-        {
-            title: "Trusted",
-            description: "We are trusted by our life science and pharmaceutical partners to deliver on their medical writing objectives.",
-        }
-    ]
-
-    const teamExpertsData = [
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        },
-        {
-            // tag: "",
-            // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Mrs. Julia James ",
-            label: 'CEO & Principal Medical Writer',
-            description: "MSc, Immunology and Immunogenetics",
-            linkText: "Learn More",
-        }
-    ]
 
     const blogsContent = [
         {
@@ -248,6 +161,7 @@ const TherapeuticAreasPage = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
         </div>
     )

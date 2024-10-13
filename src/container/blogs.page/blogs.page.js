@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './blogs.page.scss';
-import { IsMobileWidth, IsTabletWidth } from '../../components/common/utill/utils';
+import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../components/common/utill/utils';
 import CircularImageCardPanel from '../../components/common/circular.image.card.panel/circular.image.card.panel';
 import clsx from 'clsx';
 import { useStyle } from './blogs.page.style';
@@ -11,6 +11,10 @@ const BlogsPage = () => {
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     const classes = useStyle();
+
+    useEffect(() => {
+        scrollToTop()
+    }, [])
 
     const teamExpertsData = [
         {
@@ -206,8 +210,9 @@ const BlogsPage = () => {
                 topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
+                redirect="/blogs"
             />
-            <div>
+            <div id='team'>
                 <CircularImageCardPanel
                     maxWidth='lg'
                     title='Meet Our Team of Experts'
@@ -215,6 +220,7 @@ const BlogsPage = () => {
                     topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
                     cardItems={teamExpertsData}
                     buttonText="Join Our Team"
+                    redirect="/career"
                 />
             </div>
             <div id='testinomial' className='pt-3 pb-3'>

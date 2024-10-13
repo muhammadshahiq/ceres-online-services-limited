@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import { Container, Divider, Grid, IconButton, Link, Paper, Typography } from '@mui/material'
+import { Container, Divider, Grid, IconButton, Paper, Typography } from '@mui/material'
 import { useStyle } from './footer.style'
 import { IsMobileWidth, IsTabletWidth, scrollToTop } from '../../../components/common/utill/utils';
 import AppLabelV2 from '../app.label.v2/app.label.v2';
 import { useNavigate } from "react-router-dom";
 import AppContactDrawer from '../app.navbar/drawer.contact';
+import { Link } from 'react-scroll';
 
 
 const Footer = (props) => {
@@ -17,6 +18,7 @@ const Footer = (props) => {
 
     const redirect = (url) => {
         navigate(url);
+
     };
     const [state, setState] = useState({
         isContactDrawerOpen: false
@@ -56,7 +58,7 @@ const Footer = (props) => {
                                 </div>
                             }
                             <Link className={clsx('d-flex justify-content-center align-items-center z-index')}>
-                                <Typography color='primary' variant={clsx(!(mobileWidth || tabletWidth) && "body3", (mobileWidth || tabletWidth) && 'body3')}>
+                                <Typography onClick={showContactDrawer} color='primary' variant={clsx(!(mobileWidth || tabletWidth) && "body3", (mobileWidth || tabletWidth) && 'body3')}>
                                     Get consultation
                                 </Typography>
                                 <img className='ml-2' src={`${process.env.PUBLIC_URL}/assets/images/arrow-right.svg`} alt='arrow-right-icon' width='13px' height='7px' />
@@ -65,21 +67,27 @@ const Footer = (props) => {
                     </Grid>
                 </div>
                 <Grid container rowSpacing={2} columnSpacing={5} className='pt-4'>
-                    <Grid item xs={12} sm={4} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
+                    <Grid item xs={12} sm={6} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
                         <div>
                             <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Nav
                             </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                Home
-                            </Typography>
-                            <Typography onClick={() => redirect("/about")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                About
-                            </Typography>
-                            <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                Team
-                            </Typography>
+                            <Link to='home' onClick={() => redirect("/")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                <Typography className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                    Home
+                                </Typography>
+                            </Link>
+                            <Link to='about' onClick={() => redirect("/about")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                <Typography className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                    About
+                                </Typography>
+                            </Link>
+                            <Link to='team' onClick={() => redirect("/about")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                <Typography className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                    Team
+                                </Typography>
+                            </Link>
                             <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Our Ethics
                             </Typography>
@@ -89,9 +97,11 @@ const Footer = (props) => {
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
                                 Services
                             </Typography>
-                            <Typography onClick={() => redirect("/services")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                Medical
-                            </Typography>
+                            <Link to='team' onClick={() => redirect("/services")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                                <Typography className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
+                                    Medical
+                                </Typography>
+                            </Link>
                             <Typography onClick={() => redirect("/services")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 Communication
                             </Typography>
@@ -100,7 +110,7 @@ const Footer = (props) => {
                             </Typography>
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={4} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
+                    <Grid item xs={12} sm={6} md={4} lg={4} className={clsx(classes.gridStyle, 'd-flex justify-content-between pt-2 pb-5')}>
                         <div>
                             <Typography color='primary' className='pt-3 pb-3 font-weight-bold'
                                 variant={clsx(!(mobileWidth || tabletWidth) && 'body3', tabletWidth && 'body3', mobileWidth && 'caption')}>
