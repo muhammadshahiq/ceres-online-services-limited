@@ -79,14 +79,14 @@ const AppNavbar = (props) => {
             const scrollY = window.scrollY;
 
             // Check if the scroll position is greater than 100px
-            if (scrollY > 800) {
+            if (scrollY > 5) {
                 setBgColorChange(true);  // Change background color
             } else {
                 setBgColorChange(false);  // Revert to original background
             }
 
             // Set sticky based on scrollY
-            if (scrollY > 800) {
+            if (scrollY > 5) {
                 setIsSticky(true);
             } else {
                 setIsSticky(false);
@@ -109,6 +109,9 @@ const AppNavbar = (props) => {
                 <AppBar
                     position="fixed"
                     className={clsx(classes.appNavbar, 'm-auto')}
+                    sx={{
+                        background: bgColorChange ? '#fff' : 'transparent'
+                    }}
                 >
                     <Container maxWidth="xl" className=''>
                         <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-2 pb-2")}>
@@ -195,7 +198,8 @@ const AppNavbar = (props) => {
                         </Toolbar>
                     </Container>
                 </AppBar>
-            )}
+            )
+            }
             <div className={clsx(classes.appBarSpacer)} />
             {
                 state.isContactDrawerOpen ?
@@ -205,7 +209,7 @@ const AppNavbar = (props) => {
                         hideContactDrawer={hideContactDrawer}
                     /> : null
             }
-        </div>
+        </div >
     );
 };
 

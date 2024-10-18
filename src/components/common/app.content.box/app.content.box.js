@@ -5,14 +5,14 @@ import { useStyle } from './app.content.box.style';
 import { Typography } from '@mui/material';
 
 const AppContentBox = (props) => {
-    const { title, description, label, description2, textAlign, variantDescription } = props
+    const { title, description, label, description2, textAlign, variantDescription, titleSize } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
     return (
         <div className={clsx(textAlign ? 'w-100 d-flex flex-column align-items-center justify-content-center ' : '')}>
             {title ?
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h2', mobileWidth && 'h6')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'}`)}>
+                <Typography sx={{ fontSize: titleSize ? `${titleSize}px` : '64px' }} variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h2', mobileWidth && 'h6')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'}`)}>
                     {title}
                 </Typography> : null
             }

@@ -1,7 +1,8 @@
 import { makeStyles } from '@mui/styles';
 export const useStyle = makeStyles(theme => ({
     appNavbar: {
-        background: theme.palette.background.paper,
+        // background: theme.palette.background.paper,
+        // background:'transparent',
         // height: '72px',
         left: '0px',
         top: "0px",

@@ -18,7 +18,7 @@ export const materialThemeBase = {
       fontFamily: 'Lora',
       fontWeight: 400,
       fontSize: 45,
-      lineHeight: '62.64px'
+      lineHeight: '80.64px'
     },
     h3: {
       fontFamily: 'Lora',
