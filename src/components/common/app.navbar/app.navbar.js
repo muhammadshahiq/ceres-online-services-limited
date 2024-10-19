@@ -114,9 +114,9 @@ const AppNavbar = (props) => {
                     }}
                 >
                     <Container maxWidth="xl" className=''>
-                        <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-2 pb-2")}>
+                        <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-3 pb-3")}>
                             <Grid container columnSpacing={2} className='h-100 d-flex justify-content-center align-items-center'>
-                                <Grid item md={3} lg={3.5} className='h-100' >
+                                <Grid item md={3} lg={3} className='h-100' >
                                     <div className="cursor-pointer">
                                         <img
                                             height='64px'
@@ -125,8 +125,8 @@ const AppNavbar = (props) => {
                                         ></img>
                                     </div>
                                 </Grid>
-                                <Grid item md={6} lg={6.5} className="h-100 d-flex justify-content-center">
-                                    <div className="position-absolute left-30 top-0">
+                                <Grid item md={6} lg={6} className="h-100 d-flex justify-content-center">
+                                    <div className="position-absolute left-28 top-0">
                                         <img
                                             height='150px'
                                             width='100%'
@@ -148,6 +148,13 @@ const AppNavbar = (props) => {
                                             Services
                                         </Button>
                                     </Link>
+                                    <div className="position-absolute top-0 pl-5">
+                                        <img
+                                            height='50px'
+                                            width='100%'
+                                            src={`${process.env.PUBLIC_URL}/assets/images/vertical-divider-center.svg`}
+                                        ></img>
+                                    </div>
                                     <Link to='gene-theraphy'>
                                         {dropdownData && dropdownData.map((data, index) => {
                                             return <div key={index}>
@@ -166,7 +173,7 @@ const AppNavbar = (props) => {
                                             Blog
                                         </Button>
                                     </Link>
-                                    <div className="position-absolute right-20 top-0">
+                                    <div className="position-absolute right-25 top-0">
                                         <img
                                             height='120px'
                                             width='100%'
@@ -174,7 +181,7 @@ const AppNavbar = (props) => {
                                         ></img>
                                     </div>
                                 </Grid>
-                                <Grid item md={3} lg={2} className='h-100 d-flex justify-content-end' >
+                                <Grid item md={3} lg={3} className='h-100 d-flex justify-content-end' >
                                     <Button onClick={showContactDrawer} variant="outlined" className={clsx(classes.btn, "text-transform-uppercase font-weight-boldclasses.textStyle, pt-2 pb-2 pl-4 pr-4")}>
                                         Contact Us
                                     </Button>

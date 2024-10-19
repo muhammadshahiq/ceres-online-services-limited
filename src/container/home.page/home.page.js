@@ -229,9 +229,10 @@ const HomePage = () => {
                     redirect="/services"
                     id='services'
                     tickerImages={tickerImages}
+                    descriptionWidth='w-70'
                 />
             </div>
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4 pt-5 pb-5', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
                     waveTheme="2"
                     buttonText="Lets Connect"

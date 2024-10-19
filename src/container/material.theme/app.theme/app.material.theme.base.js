@@ -18,7 +18,7 @@ export const materialThemeBase = {
       fontFamily: 'Lora',
       fontWeight: 400,
       fontSize: 45,
-      lineHeight: '80.64px'
+      lineHeight: '76.64px'
     },
     h3: {
       fontFamily: 'Lora',
@@ -36,7 +36,7 @@ export const materialThemeBase = {
       fontFamily: 'Outfit',
       fontWeight: 400,
       fontSize: 28,
-      lineHeight: '32px'
+      lineHeight: '50px'
     },
     h6: {
       fontFamily: 'Outfit',
@@ -83,9 +83,9 @@ export const materialThemeBase = {
     },
     body1: {
       fontFamily: 'Outfit',
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: 20,
-      lineHeight: '24.2px'
+      lineHeight: '28.2px'
     },
     body2: {
       fontFamily: 'Outfit',

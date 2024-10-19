@@ -5,23 +5,23 @@ import { useStyle } from './app.content.box.style';
 import { Typography } from '@mui/material';
 
 const AppContentBox = (props) => {
-    const { title, description, label, description2, textAlign, variantDescription, titleSize } = props
+    const { title, description, label, description2, textAlign, variantDescription, titleSize, labelSize, descriptionWidth } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const classes = useStyle()
     return (
         <div className={clsx(textAlign ? 'w-100 d-flex flex-column align-items-center justify-content-center ' : '')}>
             {title ?
-                <Typography sx={{ fontSize: titleSize ? `${titleSize}px` : '64px' }} variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h2', mobileWidth && 'h6')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'}`)}>
+                <Typography sx={{ fontSize: (!(mobileWidth || tabletWidth) && titleSize) && `${titleSize}px` }} variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h2', mobileWidth && 'h6')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'}`)}>
                     {title}
                 </Typography> : null
             }
             {label ?
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h5', tabletWidth && 'h4', mobileWidth && 'body1')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'} pt-3 pb-3`)}>
+                <Typography sx={{ fontSize: (!(mobileWidth || tabletWidth) && labelSize) && `${labelSize}px` }} variant={clsx(!(mobileWidth || tabletWidth) && 'h5', tabletWidth && 'h4', mobileWidth && 'body1')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'} pt-2 pb-2`)}>
                     {label}
                 </Typography> : null}
             {description ?
-                <Typography variant={clsx((!(mobileWidth || tabletWidth) && variantDescription) && variantDescription, (!(mobileWidth || tabletWidth) && !variantDescription) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className={clsx(classes.textStyle, `text-transform-none ${textAlign ? 'text-center' : 'text-left'} pt-3 pb-3`)}>
+                <Typography variant={clsx((!(mobileWidth || tabletWidth) && variantDescription) && variantDescription, (!(mobileWidth || tabletWidth) && !variantDescription) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className={clsx(classes.textStyle, `text-transform-none ${(!(mobileWidth || tabletWidth) && descriptionWidth) && descriptionWidth} ${textAlign ? 'text-center' : 'text-left'} pt-2 pb-2`)}>
                     {description}
                 </Typography> : null
             }
