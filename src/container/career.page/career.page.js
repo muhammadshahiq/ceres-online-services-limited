@@ -77,16 +77,17 @@ const CareerPage = () => {
         <div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
-                    className='pr-5'
                     image={`${process.env.PUBLIC_URL}/assets/images/career-banner.svg`}
                     title='Careers at Ceres Online'
                     label='Empowering Growth Through Collaboration'
                     description="Our team unites to achieve personal and professional goals, fostering a thriving environment for new talent to flourish and drive our business forward. Together, we embrace ambition and innovation!"
                     buttonText='Join our team'
                     tickerImages={tickerImages}
+                    bannerHeight="550px"
+                    descriptionWidth='w-90'
                 />
             </div>
-            <div id='team' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div id='team' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4 pt-4 pb-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <CircularImageCardPanel
                     justifyContent="center"
                     title='Vacancies Title'

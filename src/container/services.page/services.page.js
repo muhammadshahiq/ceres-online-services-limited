@@ -168,7 +168,9 @@ const ServicesPage = () => {
                     redirect='/medical-writing-gene-theraphy'
                 />
             </div>
-            <ServicesPanel backgroundColor="#f7f7f7" />
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5 pt-4 pb-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                <ServicesPanel backgroundColor="#f7f7f7" maxWidth='lg' />
+            </div>
             {/* Remaining Carousel */}
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2', 'overflow-hidden')}>
                 <TestinomialV2
@@ -204,6 +206,9 @@ const ServicesPage = () => {
                     hideBackgroundColor
                     buttonText="Lets Connect"
                     title='Start’s from experiments till goto Market Strategy'
+                    titleVariant='subtitle64400'
+                    descriptionVariant='body24400'
+                    maxWidth='lg'
                     description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
                     footer={<AppButton buttonText="Get in Touch" />}
                 />
@@ -234,7 +239,7 @@ const ServicesPage = () => {
                 buttonText="View All Blogs"
                 redirect="/blogs"
             />
-        </div>
+        </div >
     )
 }
 export default ServicesPage

@@ -132,13 +132,13 @@ const TherapeuticAreasPage = () => {
         <div>
             <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <BackgroundImageBanner
-                    className='pr-5'
                     image={`${process.env.PUBLIC_URL}/assets/images/therapeutic-areas.svg`}
                     title='Treatment Domains'
                     label='Our breadth of experience spans all therapeutic areas'
                     description="However, we take a special interest in providing medical writing for the following:"
                     buttonText='What we offers'
                     tickerImages={tickerImages}
+                    descriptionWidth="w-70"
                 />
             </div>
             <div id='gene-theraphy' className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>

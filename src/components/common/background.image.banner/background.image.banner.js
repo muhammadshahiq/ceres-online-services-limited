@@ -9,7 +9,7 @@ import AppContentBox from '../app.content.box/app.content.box';
 import AppButton from '../app.button/app.button';
 
 const BackgroundImageBanner = (props) => {
-    const { image, title, description, footer, label, buttonText, tickerImages, className, redirect, scrollID, descriptionWidth } = props
+    const { image, title, description, footer, label, buttonText, tickerImages, className, redirect, scrollID, descriptionWidth, bannerHeight } = props
     const mobileWidth = IsMobileWidth()
     const tabletWidth = IsTabletWidth()
     const desktopWidth = IsDesktopWidth()
@@ -21,12 +21,12 @@ const BackgroundImageBanner = (props) => {
             <Container maxWidth='xl' className={clsx((mobileWidth || tabletWidth) && 'position-relative pt-4 pb-4')}>
                 <Grid container>
                     <Grid item xs={12} sm={12} md={6} lg={6} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-4', mobileWidth && 'pt-5 pb-2 z-index-100')}>
-                        <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pt-3 pb-3', tabletWidth && 'pt-5 pb-5 pl-0 pr-0', className ? className : 'pl-0')}>
+                        <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pt-3 pb-3', tabletWidth && 'pt-5 pb-5 pl-0 pr-0', className ? className : 'pl-0 pr-0')}>
                             <AppContentBox
                                 title={title}
-                                titleSize={72}
+                                variantTitleDesktop='subtitle72400'
+                                variantLabelDesktop="subtitle40400"
                                 label={label}
-                                labelSize={40}
                                 description={description}
                                 descriptionWidth={descriptionWidth}
                             />
@@ -53,7 +53,7 @@ const BackgroundImageBanner = (props) => {
                         {image ? <div>
                             <img
                                 src={image}
-                                height={!(mobileWidth || tabletWidth) ? 'auto' : tabletWidth ? '400px' : mobileWidth ? '450px' : '520px'}
+                                height={(!(mobileWidth || tabletWidth) && bannerHeight) ? bannerHeight : tabletWidth ? '400px' : mobileWidth ? '450px' : 'auto'}
                                 width='100%'
                             />
                         </div> : null

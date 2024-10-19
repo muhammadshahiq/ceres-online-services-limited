@@ -18,7 +18,7 @@ export const materialThemeBase = {
       fontFamily: 'Lora',
       fontWeight: 400,
       fontSize: 45,
-      lineHeight: '76.64px'
+      lineHeight: '80.64px'
     },
     h3: {
       fontFamily: 'Lora',
@@ -36,7 +36,7 @@ export const materialThemeBase = {
       fontFamily: 'Outfit',
       fontWeight: 400,
       fontSize: 28,
-      lineHeight: '50px'
+      lineHeight: '32px'
     },
     h6: {
       fontFamily: 'Outfit',
@@ -44,11 +44,29 @@ export const materialThemeBase = {
       fontSize: 24,
       lineHeight: '25.6px'
     },
-    subtitle18600: {
-      fontFamily: 'Outfit',
-      fontWeight: 600,
-      fontSize: 18,
-      lineHeight: '25.73px'
+    subtitle72400: {
+      fontFamily: 'Lora',
+      fontWeight: 400,
+      fontSize: 72,
+      lineHeight: '86.4px'
+    },
+    subtitle40400: {
+      fontFamily: 'Lora',
+      fontWeight: 400,
+      fontSize: 40,
+      lineHeight: '52px'
+    },
+    subtitle64400: {
+      fontFamily: 'Lora',
+      fontWeight: 400,
+      fontSize: 64,
+      lineHeight: '76.8px'
+    },
+    subtitle56400: {
+      fontFamily: 'Lora',
+      fontWeight: 400,
+      fontSize: 56,
+      lineHeight: '67.2px'
     },
     subtitle32400: {
       fontFamily: 'Outfit',
@@ -80,6 +98,12 @@ export const materialThemeBase = {
       fontSize: 20,
       fontWeight: 500,
       fontStyle: 'normal',
+    },
+    body24400: {
+      fontFamily: 'Lora',
+      fontWeight: 400,
+      fontSize: 24,
+      lineHeight: '31.2px'
     },
     body1: {
       fontFamily: 'Outfit',

@@ -13,18 +13,18 @@ const CircularImageCardPanel = (props) => {
     const classes = useStyle()
 
     return (
-        <div className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5', (mobileWidth || tabletWidth) && 'pt-3 pb-3')}>
+        <div className={clsx(!(mobileWidth || tabletWidth) && 'pt-4 pb-4', (mobileWidth || tabletWidth) && 'pt-3 pb-3')}>
             <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'xl' : mobileWidth ? 'sm' : 'lg')} className={clsx(classNames)}>
                 {justifyContent === "center" ?
                     <Container maxWidth='md'>
                         <div className={clsx(!(mobileWidth || tabletWidth) && "pt-1 pb-1 w-100", (mobileWidth || tabletWidth) && 'pt-2 pb-2 w-100 d-flex flex-column justify-content-center align-items-center')}>
                             <Typography className={clsx(classes.textStyle, 'pt-2 pb-2 text-center')}
-                                variant={clsx(!(mobileWidth || tabletWidth) && 'h2', tabletWidth && 'h4', mobileWidth && 'h6')}>
+                                variant={clsx(!(mobileWidth || tabletWidth) && 'subtitle56400', tabletWidth && 'h4', mobileWidth && 'h6')}>
                                 {title ? title : ''}
                             </Typography>
                             {description ?
                                 <Typography className={clsx(classes.textStyle, 'pt-2 pb-2 text-center')}
-                                    variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body1', mobileWidth && 'body2')}>
+                                    variant={clsx(!(mobileWidth || tabletWidth) && 'subtitle32400', tabletWidth && 'body1', mobileWidth && 'body2')}>
                                     {description}
                                 </Typography> : null
                             }
@@ -34,14 +34,14 @@ const CircularImageCardPanel = (props) => {
                     <div className={clsx(!(mobileWidth || tabletWidth) && "pt-1 pb-1 w-100 d-flex justify-content-between align-items-center", (mobileWidth || tabletWidth) && 'pt-2 pb-2 w-100 d-flex flex-column justify-content-center align-items-center')}>
                         <div>
                             {title ?
-                                <Typography className={clsx(classes.textStyle, 'pt-2 pb-2 font-weight-bold')}
-                                    variant={clsx(!(mobileWidth || tabletWidth) && 'h4', tabletWidth && 'h6', mobileWidth && 'subtitle')}>
+                                <Typography className={clsx(classes.textStyle, 'pt-2 pb-2')}
+                                    variant={clsx(!(mobileWidth || tabletWidth) && 'subtitle56400', tabletWidth && 'h6', mobileWidth && 'subtitle')}>
                                     {title}
                                 </Typography> : null
                             }
                             {description ?
-                                <Typography className={clsx(classes.textStyle, 'pt-2 pb-2 text-center')}
-                                    variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body1', mobileWidth && 'body2')}>
+                                <Typography className={clsx(classes.textStyle, 'pt-2 pb-2 text-left')}
+                                    variant={clsx(!(mobileWidth || tabletWidth) && 'subtitle32400', tabletWidth && 'body1', mobileWidth && 'body2')}>
                                     {description}
                                 </Typography> : null
                             }

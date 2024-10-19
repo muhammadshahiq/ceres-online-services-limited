@@ -232,11 +232,14 @@ const HomePage = () => {
                     descriptionWidth='w-70'
                 />
             </div>
-            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4 pt-5 pb-5', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+            <div className={clsx(!(mobileWidth || tabletWidth) && 'pl-3 pr-3 pt-5 pb-3', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                 <ContentActionBanner
+                    maxWidth='lg'
                     waveTheme="2"
                     buttonText="Lets Connect"
                     title='Start’s from experiments till goto Market Strategy'
+                    titleVariant='subtitle64400'
+                    descriptionVariant="body24400"
                     description='Helping Pharma, biotech, and medical device companies with one window solutions by our experts '
                     footer={<AppButton buttonText="Get in Touch" />}
                 />
@@ -252,16 +255,18 @@ const HomePage = () => {
             </div>
             <AppBannerPanel
                 maxWidth="lg"
-                // classNames="pl-0 pr-0"
+                classNames="pl-0 pr-0"
                 leftSideContent={<img
                     src={`${process.env.PUBLIC_URL}/assets/images/telescope-image.svg`}
                     height={!(mobileWidth || tabletWidth) ? '450px' : tabletWidth ? '400px' : '400px'}
                     width='100%'
                 />}
-                rightSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && 'pl-4 pr-4', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
+                rightSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && '', tabletWidth && 'pl-3 pr-3', mobileWidth && 'pl-2 pr-2')}>
                     <AppContentBox
                         title='Our mission is to discover molecules & Deliver to the Market'
                         label='From discovery to delivery, we craft the science that changes lives.'
+                        variantTitleDesktop='subtitle56400'
+                        variantLabelDesktop="subtitle32400"
                         description="We're dedicated to supporting our industry partners in driving therapeutic innovation with expert medical writing and regulatory documentation, guiding you every step of the way from molecule to market."
                     />
                 </div>}

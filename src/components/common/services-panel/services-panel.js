@@ -7,22 +7,25 @@ import AppContentBox from '../app.content.box/app.content.box';
 import CircularImageCard from '../circular.image.card/circular.image.card';
 
 const ServicesPanel = (props) => {
-    const { backgroundColor = "" } = props
+    const { backgroundColor = "", maxWidth } = props
     const tabletWidth = IsTabletWidth()
     const mobileWidth = IsMobileWidth()
     // const classes = useStyle();
     return (
-        <div>
+        <div style={{ background: backgroundColor }}>
             <AppBannerPanel
                 backgroundColor={backgroundColor}
-                maxWidth="lg"
-                // classNames="pl-0 pr-0"
-                leftSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && 'pl-5 pr-5')}><AppContentBox
-                    title="Providing Medical writing services"
-                    label="provide regulatory writing for you to gain marketing authorisation"
-                    description="Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals."
-                /></div>}
-                rightSideContent={<Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && '', mobileWidth && 'mt-3 ')}>
+                maxWidth={maxWidth ? maxWidth : "lg"}
+                classNames="pl-0 pr-0"
+                leftSideContent={<div className={clsx(!(mobileWidth || tabletWidth) && '')}>
+                    <AppContentBox
+                        title="Providing Medical writing services"
+                        variantTitleDesktop='subtitle64400'
+                        variantLabelDesktop='subtitle40400'
+                        label="provide regulatory writing for you to gain marketing authorisation"
+                        description="Our passion lies in medical writing. We offer regulatory writing services to help you obtain marketing authorization, and medical communications support to help you reach your commercial goals."
+                    /></div>}
+                rightSideContent={<Grid container rowSpacing={2} columnSpacing={2} className={clsx(!mobileWidth && 'pt-0 mt-0', mobileWidth && 'mt-3')}>
                     <Grid item xs={12} sm={12} md={12} lg={12} className='w-100 d-flex justify-content-end align-items-end pt-0'>
                         <div className={clsx(mobileWidth && 'd-none')}>
                             <img src={`${process.env.PUBLIC_URL}/assets/images/wave-2lines.png`} alt='link-arrow-icon' width='46px' height='69px' />
