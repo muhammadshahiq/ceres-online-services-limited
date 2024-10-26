@@ -20,7 +20,7 @@ const BackgroundImageBanner = (props) => {
             className={(clsx(!(mobileWidth || tabletWidth) && classes.header, tabletWidth && classes.headerOnTablet, mobileWidth && classes.responsiveHeader, 'position-relative w-100'))}>
             <Container maxWidth='xl' className={clsx((mobileWidth || tabletWidth) && 'position-relative pt-4 pb-4')}>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={6} lg={6} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-4', mobileWidth && 'pt-5 pb-2 z-index-100')}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5 mt-4', mobileWidth && 'z-index-100')}>
                         <Container maxWidth='md' className={clsx(!(mobileWidth || tabletWidth) && 'pt-3 pb-3', tabletWidth && 'pt-5 pb-5 pl-0 pr-0', className ? className : 'pl-0 pr-0')}>
                             <AppContentBox
                                 title={title}
@@ -49,11 +49,11 @@ const BackgroundImageBanner = (props) => {
                             }
                         </Container>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={6} lg={6} className={clsx((mobileWidth || tabletWidth) && 'position-absolute opacity-3', desktopWidth && 'position-relative', 'w-100')}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} className={clsx((mobileWidth || tabletWidth) && '', desktopWidth && 'position-relative', 'w-100')}>
                         {image ? <div>
                             <img
                                 src={image}
-                                height={(!(mobileWidth || tabletWidth) && bannerHeight) ? bannerHeight : tabletWidth ? '400px' : mobileWidth ? '450px' : 'auto'}
+                                height={(!(mobileWidth || tabletWidth) && bannerHeight) ? bannerHeight : tabletWidth ? '400px' : mobileWidth ? 'auto' : 'auto'}
                                 width='100%'
                             />
                         </div> : null

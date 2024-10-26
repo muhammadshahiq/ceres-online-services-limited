@@ -18,7 +18,7 @@ const CircularImageCard = (props) => {
         <Card elevation={0} className={clsx(!(mobileWidth || tabletWidth) && 'w-100', selected ? classes.selectedCard : cardBackgroundColor ? classes.cardBackgroundColor : classes.card, cardFlex ? 'd-flex' : "w-100")}>
             {image ?
                 <div className={clsx((cardFlex && !(mobileWidth || tabletWidth)) && 'w-30 pt-4 pb-4 pl-4 pr-4',
-                    (cardFlex && mobileWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', (cardFlex && tabletWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', !cardFlex && 'w-100 pt-2 pb-2 pl-2 pr-2',
+                    (cardFlex && mobileWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', (cardFlex && tabletWidth) && 'w-35 h-100 pt-3 pb-3 pl-3', !cardFlex && 'w-100 pt-4 pb-4 pl-4 pr-4',
                     'position-relative d-flex justify-content-center align-items-start')}>
                     <CardMedia
                         className={clsx(!(mobileWidth || tabletWidth) && classes.cardMedia, tabletWidth && classes.cardMediaOnTablet, mobileWidth && classes.cardMediaOnMobile)}

@@ -219,7 +219,7 @@ const ServicesPage = () => {
                     maxWidth='lg'
                     title='Meet Our Team of Experts'
                     description="From discovery to delivery, we craft the science that changes lives."
-                    topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                    topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-teams.png`}
                     cardItems={teamExpertsData}
                     buttonText="Join Our Team"
                     redirect="/career"
@@ -234,7 +234,7 @@ const ServicesPage = () => {
                 justifyContent="center"
                 title='Our latest blogs'
                 description="Read our latest blogs on women’s health, and other therapeutic areas that we focus on."
-                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-teams.png`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
                 redirect="/blogs"

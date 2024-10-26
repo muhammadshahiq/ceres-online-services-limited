@@ -17,6 +17,7 @@ import ServicesPage from './container/services.page/services.page';
 import TherapeuticAreasPage from './container/therapeutic.areas.page/therapeutic.areas.page';
 import CareerPage from './container/career.page/career.page';
 import MedicalWritingForGeneTheraphyPage from './container/medical-writing-for-gene-theraphy-page/medical-writing-for-gene-theraphy-page';
+import TeamPage from './container/team.page/team.page';
 // import Loadable from 'react-loadable';
 // const HomePage = Loadable({
 //   loader: () => import(/*webpackChunkName:"UPM "*/'./container/home.page/home.page'),
@@ -52,6 +53,7 @@ function App() {
                   <Route path="/therapeutic-areas" element={<TherapeuticAreasPage />} />
                   <Route path="/career" element={<CareerPage />} />
                   <Route path="/medical-writing-gene-theraphy" element={<MedicalWritingForGeneTheraphyPage />} />
+                  <Route path="/team" element={<TeamPage />} />
                   <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />

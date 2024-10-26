@@ -18,7 +18,7 @@ export const useStyle = makeStyles((theme) => ({
         borderRadius: '6.64px',
     },
     rightBanner: {
-        height: '120px'
+        height: 'auto'
     },
     resRightBanner: {
         backgroundColor: '#70E000',

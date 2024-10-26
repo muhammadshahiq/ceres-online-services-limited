@@ -198,7 +198,7 @@ const MedicalWritingForGeneTheraphyPage = () => {
                 justifyContent="center"
                 title='Our latest blogs'
                 description="Read our latest blogs on women’s health, and other therapeutic areas that we focus on."
-                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-team.svg`}
+                topHeaderImage={`${process.env.PUBLIC_URL}/assets/images/dr-teams.png`}
                 cardItems={blogsContent}
                 buttonText="View All Blogs"
                 redirect="/blogs"

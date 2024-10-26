@@ -8,6 +8,8 @@ import { useState } from "react";
 import { Box } from "@mui/system";
 import { Link } from 'react-scroll';
 import DropDownMenu from "../dropdown.menu/dropdown.menu";
+import ExpandableView from "../expandable.view/expandable.view";
+import AppLabelV2 from "../app.label.v2/app.label.v2";
 
 const AppDrawer = (props) => {
     const { ShowWhiteColorIcon, dropdownData } = props
@@ -17,6 +19,7 @@ const AppDrawer = (props) => {
     let navigate = useNavigate();
     const redirect = (url) => {
         navigate(url);
+        hideDrawer()
     }
     const [state, setState] = useState({
         isDrawerOpen: false
@@ -29,6 +32,7 @@ const AppDrawer = (props) => {
     const hideDrawer = () => {
         setState({ ...state, isDrawerOpen: false });
     };
+
     return (
         <div>
             {state.isDrawerOpen ?
@@ -102,7 +106,7 @@ const AppDrawer = (props) => {
                                 Services
                             </Button>
                         </Link>
-                        <div to='gene-theraphy'>
+                        {/* <div to='gene-theraphy'>
                             {dropdownData && dropdownData.map((data, index) => {
                                 return <div key={index}>
                                     <DropDownMenu
@@ -114,7 +118,8 @@ const AppDrawer = (props) => {
                                     />
                                 </div>
                             })}
-                        </div>
+                        </div> */}
+                        <ExpandableView  redirect={redirect} />
                         <Link to="blogs" onClick={() => redirect('/blogs')} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                             <Button variant="none" className={clsx(classes.textStyle, "text-transform-none font-weight-normal mt-1 mb-1")}>
                                 Blog

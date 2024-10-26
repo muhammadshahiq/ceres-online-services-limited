@@ -61,9 +61,29 @@ const Testinomial = (props) => {
                 <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', tabletWidth && 'body2', mobileWidth && 'body3')} className="pt-2 pb-2">
                   {data && data.label}
                 </Typography>
-                <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h4', tabletWidth && 'h5', mobileWidth && 'h6')} className="pt-2 pb-2">
-                  {data && data.content}
-                </Typography>
+                <div className='position-relative'>
+                  <div className='position-absolute w-100 h-100'>
+                    <div className='mr-4'>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/quotation-start.svg`}
+                        width='45.14px'
+                        height='54.25px'
+                        alt='quotation-icon'
+                      />
+                    </div>
+                    <div className='w-100 d-flex justify-content-end align-items-center h-100 ml-4'>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/quotation-end.svg`}
+                        width='45.14px'
+                        height='54.25px'
+                        alt='quotation-icon2'
+                      />
+                    </div>
+                  </div>
+                  <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'h4', tabletWidth && 'h5', mobileWidth && 'h6')} className="pt-2 pb-2">
+                    {data && data.content}
+                  </Typography>
+                </div>
               </div>
             </div>
           </div>

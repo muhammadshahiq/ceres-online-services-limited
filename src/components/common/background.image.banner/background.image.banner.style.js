@@ -14,7 +14,7 @@ export const useStyle = makeStyles((theme) => ({
     },
     responsiveHeader: {
         // background: theme.palette.gradientColor3.main,
-        height: '450px',
+        height: 'auto',
         borderRadius: '0px',
     },
     textStyle: {

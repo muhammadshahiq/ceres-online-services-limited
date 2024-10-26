@@ -119,7 +119,10 @@ export const useStyle = makeStyles(theme => ({
     contactDrawerOnTablet: {
         background: theme.palette.background.paper,
         // marginTop: '60px',
-        width: '580px',
-        boxShadow: 'none !important'
+        width: 'auto',
+        boxShadow: 'none !important',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 }))

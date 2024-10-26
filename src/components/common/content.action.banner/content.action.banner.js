@@ -12,8 +12,8 @@ const ContentActionBanner = (props) => {
     const tabletWidth = IsTabletWidth()
     return (
         <Container maxWidth={clsx(!mobileWidth && 'xl', mobileWidth && 'xl')} className={clsx((mobileWidth || tabletWidth) && 'pl-0 pr-0')}>
-            <Box className={clsx(hideBackgroundColor ? '' : classes.contentBannerStyle, 'pt-3 pb-3 position-relative overflow-hidden')}>
-                {waveTheme == "1" ?
+            <Box className={clsx(hideBackgroundColor ? '' : classes.contentBannerStyle, 'pt-3 pb-3 position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center')}>
+                {((waveTheme == "1") && !(mobileWidth || tabletWidth)) ?
                     <>
                         <div className='w-100 position-absolute h-100 d-flex align-items-end bottom-30'>
                             <img
@@ -46,7 +46,7 @@ const ContentActionBanner = (props) => {
                             ></img>
                         </div>
                     </>
-                    : waveTheme == "2" ?
+                    : ((waveTheme == "2") && !(mobileWidth || tabletWidth)) ?
                         <>
                             <div className='w-100 position-absolute'>
                                 <img
@@ -65,13 +65,13 @@ const ContentActionBanner = (props) => {
                         </> :
                         null
                 }
-                <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'md' : mobileWidth ? 'sm' : 'md')} className={clsx((mobileWidth || tabletWidth) && 'pl-0 pr-0', 'pt-5 pb-5 z-index position-relative')}>
-                    <div className={clsx(!mobileWidth && 'pt-5 pb-5', mobileWidth && 'w-100 pl-2 pr-2',
+                <Container maxWidth={clsx(maxWidth ? maxWidth : !mobileWidth ? 'md' : mobileWidth ? 'sm' : 'md')} className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5', (mobileWidth || tabletWidth) && 'pl-0 pr-0 pt-3 pb-3', 'z-index position-relative')}>
+                    <div className={clsx(!(mobileWidth || tabletWidth) && 'pt-5 pb-5', mobileWidth && 'w-100 pl-2 pr-2',
                         'd-flex flex-row justify-content-center align-items-center m-auto h-100')}>
                         <div className='w-100 m-auto text-center d-flex flex-column justify-content-center align-items-center pl-3 pr-3'>
                             {buttonText ? <AppButton buttonText={buttonText} buttonTheme="ROUNDED" /> : null}
                             {title ?
-                                <Typography variant={clsx((!(mobileWidth || tabletWidth) && !titleVariant) && 'h2', (!(mobileWidth || tabletWidth) && titleVariant) && titleVariant, tabletWidth && 'h4', mobileWidth && 'h5')} className={clsx(!(mobileWidth || tabletWidth) && 'w-80', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-center pb-2')}>
+                                <Typography variant={clsx((!(mobileWidth || tabletWidth) && !titleVariant) && 'h2', (!(mobileWidth || tabletWidth) && titleVariant) && titleVariant, tabletWidth && 'h4', mobileWidth && 'h5')} className={clsx(!(mobileWidth || tabletWidth) && 'w-80', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-center pt-2 pb-2')}>
                                     {title}
                                 </Typography> : null
                             }
@@ -84,16 +84,18 @@ const ContentActionBanner = (props) => {
                                     {description}
                                 </Typography> : null
                             }
-                            <div className='text-left pt-3 pb-3'>
-                                {props.children}
-                            </div>
+                            {props.children ?
+                                <div className='text-left pt-3 pb-3'>
+                                    {props.children}
+                                </div> : null
+                            }
                             {description2 ?
                                 <Typography variant={clsx(!(mobileWidth || tabletWidth) && 'body1', (mobileWidth || tabletWidth) && 'body3')} className={clsx(!(mobileWidth || tabletWidth) && 'w-65', mobileWidth && 'w-100', classes.textStyle, 'text-transform-none text-center pt-2 pb-2')}>
                                     {description2}
                                 </Typography> : null
                             }
                             {footer ?
-                                <div className='mt-2'>
+                                <div className={clsx('mt-2')}>
                                     {footer}
                                 </div> : null
                             }

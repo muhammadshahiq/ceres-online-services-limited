@@ -24,20 +24,20 @@ const AppContactDrawer = (props) => {
                 anchor='right'
                 open={isContactDrawerOpen}
                 onClose={props.hideContactDrawer}
-                className={(classes.contactDrawer)}
+                className={clsx(classes.contactDrawer, 'position-relative overflow-hidden')}
                 classes={{
                     paper: mobileWidth ? classes.contactDrawerPaper : classes.contactDrawerOnTablet,
                 }}
             >
-                <div className="position-relative overflow-hidden">
-                    <div className="position-absolute w-100">
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/images/contact-form-wave.png`}
-                            width='100%'
-                            height='100%'
-                            alt='wave-icon'
-                        />
-                    </div>
+                <div className="position-absolute w-100 h-100">
+                    <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/contact-form-wave.png`}
+                        width='100%'
+                        height='100%'
+                        alt='wave-icon'
+                    />
+                </div>
+                <div className="">
                     {isContactDrawerOpen ?
                         <div className="pl-4 pt-2 w-100 d-flex justify-content-start align-items-center">
                             <IconButton size="medium" onClick={props.hideContactDrawer} className='cursor-pointer'>

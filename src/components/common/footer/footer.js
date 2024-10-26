@@ -49,9 +49,9 @@ const Footer = (props) => {
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={5} className={clsx('d-flex pt-4 pb-4 justify-content-center align-items-center position-relative overflow-hidden', !(mobileWidth || tabletWidth) && classes.rightBanner, mobileWidth && classes.resRightBanner)}>
                             {!(mobileWidth || tabletWidth) &&
-                                <div className='position-absolute w-100'>
+                                <div className='position-absolute w-100 h-100'>
                                     <img
-                                        height='120px'
+                                        height='100%'
                                         width='100%'
                                         src={`${process.env.PUBLIC_URL}/assets/images/Ellipse.png`}
                                     ></img>
@@ -83,7 +83,7 @@ const Footer = (props) => {
                                     About
                                 </Typography>
                             </Link>
-                            <Link to='team' onClick={() => redirect("/about")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
+                            <Link onClick={() => redirect("/team")} spy={true} smooth={true} offset={50} duration={500} delay={500}>
                                 <Typography className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                     Team
                                 </Typography>

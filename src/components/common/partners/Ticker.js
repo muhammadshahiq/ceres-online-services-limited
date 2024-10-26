@@ -23,10 +23,11 @@ export const PartnerTickerItem = ({
 const PartnerTicker = (
   props
 ) => {
-  const animation = `scroll 10s linear infinite`;
+  // const animation = `scroll 10s linear infinite`;
+  //animation: animation,
   return (
     <div className='ticker'>
-      <div style={{ animation: animation, display: "flex" }}>
+      <div style={{ display: "flex" }}>
         <div className="ticker-list">{props.children}</div>
       </div>
     </div>

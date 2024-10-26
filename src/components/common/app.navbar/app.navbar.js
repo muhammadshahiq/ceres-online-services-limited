@@ -117,7 +117,7 @@ const AppNavbar = (props) => {
                         <Toolbar className={clsx(!mobileWidth && "w-100 d-flex flex-row justify-content-between pt-3 pb-3")}>
                             <Grid container columnSpacing={2} className='h-100 d-flex justify-content-center align-items-center'>
                                 <Grid item md={3} lg={3} className='h-100' >
-                                    <div className="cursor-pointer">
+                                    <div className="cursor-pointer" onClick={() => redirect('/')}>
                                         <img
                                             height='64px'
                                             width='274px'
