@@ -105,7 +105,7 @@ const HomePage = () => {
         {
             // tag: "",
             // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
-            avatar: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
+            avatar: `${process.env.PUBLIC_URL}/assets/images/shaista-pic.png`,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Shaista Munshi",
             label: 'Director MS Physcology ',
