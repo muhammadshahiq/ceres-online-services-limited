@@ -27,7 +27,7 @@ const TeamPage = () => {
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Zahid Ashraf",
             label: 'CIO & Digital Health Leader',
-            description: "IoT | RPM | Telemedicine | Regulations",
+            description: "Mckenzie top50 award winning CTO",
             linkText: "Learn More",
         },
         {
