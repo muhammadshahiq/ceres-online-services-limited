@@ -170,7 +170,7 @@ const Footer = (props) => {
                                 +1 981 341-23-19
                             </Typography>
                             <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                hello@caresonline.com
+                                info@ceresonlineservices.com
                             </Typography>
                         </div>
                     </Grid>
