@@ -68,7 +68,7 @@ const ServicesPage = () => {
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Scott Mudie",
             label: 'Sales Director',
-            description: "Neuroscience and overall healthcare excellence.",
+            description: "Driving strategic growth and leading our sales team to deliver exceptional results and customer success.",
             linkText: "Learn More",
         },
         {
