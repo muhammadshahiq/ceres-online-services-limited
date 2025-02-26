@@ -42,7 +42,7 @@ const BlogsPage = () => {
             // titleIconSrc: `${process.env.PUBLIC_URL}/assets/images/girl-avatar.png`,
             avatar: `${process.env.PUBLIC_URL}/assets/images/scott-mudi-pic.png`,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
-            title: "Scott Mudi",
+            title: "Scott Mudie",
             label: 'Sales Director',
             description: "Neuroscience and overall healthcare excellence.",
             linkText: "Learn More",
