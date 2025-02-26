@@ -167,7 +167,7 @@ const Footer = (props) => {
                                 <Divider sx={{ width: '20%', backgroundColor: '#000', height: '1px', right: 0 }} />
                             </div>
                             <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
-                                +1 981 341-23-19
+                                +44 7714 812099
                             </Typography>
                             <Typography onClick={() => redirect("/")} className={clsx(classes.textStyle, 'pt-1')} variant='caption'>
                                 info@ceresonlineservices.com

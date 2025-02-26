@@ -128,7 +128,7 @@ const HomePage = () => {
             avatar: `${process.env.PUBLIC_URL}/assets/images/scott-mudi-pic.png`,
             // image: `${process.env.PUBLIC_URL}/assets/images/p-1.png`,
             title: "Scott Mudi",
-            label: 'Chief Medical Officer (CMO)',
+            label: 'Sales Director',
             description: "Neuroscience and overall healthcare excellence.",
             linkText: "Learn More",
         },
